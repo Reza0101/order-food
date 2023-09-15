@@ -46,6 +46,14 @@ const config: Config = {
       "warning-light": "#F4B740",
     },
     extend: {
+      borderRadius: {
+        '4': '4px',
+        '8': '8px',
+        '16': '16px',
+        '24': '24px',
+        '32': '32px',
+        '64': '64px',
+      },
       boxShadow: {
         "drop-shadow-2": "0px 2px 2px 0px rgba(0, 0, 0, 0.25)",
         "drop-shadow-4": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",

@@ -1,8 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: estedad;
+    src: url(./../fonts/estedad.woff2);
+}
+
 body {
     overflow-x: hidden;
+    font-family: estedad;
 }
 .link-navbar::before {
     content: '';
@@ -37,7 +44,8 @@ body {
     background-color: rgba(0, 0, 0, 0.413);
 }
 .icon-navbar:hover{
-    transform: scale(120%);
+    /* transform: scale(120%); */
+    background-color: #417F56;
 }
 .swiper-button-next,
 .swiper-button-prev {

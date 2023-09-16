@@ -71,22 +71,22 @@ const Header = () => {
 
         <div className="pl-[20px] flex items-center gap-2">
           <Link
-            className="text-[24px] duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
+            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
             href="/"
           >
-            <BiSearchAlt className="icon-navbar duration-300" />
+            <BiSearchAlt className="hover:text-white duration-300" />
           </Link>
           <Link
-            className="text-[24px] duration-300 bg-tint-1 p-1 rounded-8 text-primary"
+            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
             href="/"
           >
-            <HiOutlineShoppingCart className="icon-navbar duration-300" />
+            <HiOutlineShoppingCart className=" hover:text-white duration-300" />
           </Link>
           <Link
-            className="text-[24px] duration-300 bg-tint-1 p-1 rounded-8 text-primary"
+            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
             href="/"
           >
-            <AiOutlineUser className="icon-navbar duration-300" />
+            <AiOutlineUser className="duration-300 hover:text-white" />
           </Link>
         </div>
       </div>

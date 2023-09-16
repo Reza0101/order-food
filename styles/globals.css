@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body, * {
+    overflow-x: hidden;
+}
+.link-navbar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #417F56;
+    border-radius: 4px;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 0.25s;
+}
+.link-navbar:hover::before {
+    scale: 1;
+    transform-origin: scale 0.25s;
+    color: #417F56;
+}
+.link-navbar {
+    position: relative;
+    padding-bottom: 5px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.link-navbar:hover{
+    color: #417F56;
+    font-weight: bold;
+}
+.closeMenu {
+    background-color: rgba(0, 0, 0, 0.413);
+}
+.icon-navbar:hover{
+    transform: scale(120%);
+}

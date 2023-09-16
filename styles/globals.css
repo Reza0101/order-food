@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body, * {
+body {
     overflow-x: hidden;
 }
 .link-navbar::before {
@@ -38,4 +38,13 @@ body, * {
 }
 .icon-navbar:hover{
     transform: scale(120%);
+}
+.swiper-button-next,
+.swiper-button-prev {
+    right:5px;
+    padding: 30px;
+    color: #417F56 !important;
+}
+.swiper-pagination-bullet{
+    background-color: #417F56 !important;
 }

@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import SliderLanding from "@/components/Slider-Landing";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function Home() {
   const menufood = [
@@ -13,7 +14,7 @@ export default function Home() {
     <div className="">
       <Layout>
         <SliderLanding />
-
+        {/* Resturan menu setion */}
         <div>
           <p className="text-center text-gray-8 font-bold text-[16px] md:text-[24px] mt-[20px]">
             منوی رستوران
@@ -32,6 +33,49 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* About setion */}
+
+        <div className="bg-aboutImage flex flex-col px-[20px] md:flex-row items-center justify-around w-full h-[339px] mx-auto my-5 bg-cover bg-center md:-mt-60">
+          <div className="text-white w-full md:w-[50%]">
+            <p className="font-bold text-[16px] py-3 md:text-[24px]">
+              رستوران های زنجیره ای ترخینه
+            </p>
+            <p className="text-[10px] md:text-[20px]">
+              مهمان‌نوازی یکی از مهم‌ترین مشخصه‌های ایرانیان است و باعث افتخار
+              ماست که بیش از 20 سال است خدمت‌گزار مردم شریف ایران هستیم. ما در
+              رستوران‌های زنجیره‌ای ترخینه همواره تلاش کردیم که در محیطی اصیل بر
+              پایه معماری و طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور
+              شان شما عزیزان ارائه دهیم.
+            </p>
+            <button className="border flex items-center w-[152px] justify-center my-5 mr-auto rounded-4 gap-1 border-white bg-transparent">
+              اطلاعات بیشتر
+              <MdKeyboardArrowLeft className="text-[16px]" />
+            </button>
+          </div>
+          <div className="flex items-center justify-around gap-5 md:gap-6 flex-col text-white w-full md:w-[50%]">
+            <div className="flex items-center justify-around w-full">
+              <div className="flex flex-col items-center gap-2">
+                <img className="w-[24px] md:w-[48px]" src="./Images/about/user.png" alt="" />
+                <p>پرسنلی محرب و حرفه ای</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img className="w-[24px] md:w-[48px]" src="./Images/about/diagram.png" alt="" />
+                <p>کیفیت بالای غذا ها</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-around w-full">
+              <div className="flex flex-col items-center gap-2">
+                <img className="w-[24px] md:w-[48px]" src="./Images/about/home-wifi.png" alt="" />
+                <p>محیطی دلنشین و آرام</p>
+              </div>
+              <div className="flex flex-col items-center gap-2l">
+                <img className="w-[24px] md:w-[48px]" src="./Images/about/menu-board.png" alt="" />
+                <p>منوی متنوع</p>
+              </div>
+            </div>
           </div>
         </div>
       </Layout>

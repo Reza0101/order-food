@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 import { ImLibrary } from "react-icons/im";
 import { FiUsers } from "react-icons/fi";
-import { LuPhoneCall } from "react-icons/Lu";
+import { LuPhoneCall } from "react-icons/lu";
 
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);

@@ -1,5 +1,5 @@
-const ModalImage = ({ img,setShow }: any) => {
-  console.log(img);
+import { imagesModal } from "@/types";
+const ModalImage = ({ img,setShow }: imagesModal) => {
 
   return (
     <div onClick={() => setShow(false)} className="flex items-center fixed z-50 w-[100%] h-[100%] justify-center">

@@ -8,7 +8,7 @@ import ModalImage from "@/components/ModalImage";
 export default function Home() {
   const [isActiveBranc, setIsActiveBranch] = useState<number>();
   const [isShowImage, setIsShowImage] = useState<boolean>(false);
-  const [srcImage, setSrcImage] = useState<string>();
+  const [srcImage, setSrcImage] = useState<string>('');
 
   const menufood = [
     { id: 1, title: "نوشیدنی", img: "./Images/menue/image1.png" },

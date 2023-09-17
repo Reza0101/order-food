@@ -1,5 +1,6 @@
 import { propsElement } from "@/types"
 import Header from "./Header"
+import Footer from "./Footer"
 
 const Layout = ({children}: propsElement) => {
     return (
@@ -8,6 +9,7 @@ const Layout = ({children}: propsElement) => {
             <main>
                 {children}
             </main>
+            <Footer />
         </div>
     )
 }

@@ -8,7 +8,7 @@ import ModalImage from "@/components/ModalImage";
 export default function Home() {
   const [isActiveBranc, setIsActiveBranch] = useState<number>();
   const [isShowImage, setIsShowImage] = useState<boolean>(false);
-  const [srcImage, setSrcImage] = useState<string>('');
+  const [srcImage, setSrcImage] = useState<string>("");
 
   const menufood = [
     { id: 1, title: "نوشیدنی", img: "./Images/menue/image1.png" },
@@ -73,7 +73,7 @@ export default function Home() {
 
         {/* About setion */}
 
-        <div className="bg-aboutImage flex flex-col px-[20px] md:flex-row items-center justify-around w-full h-[339px] mx-auto my-5 bg-cover bg-center md:-mt-60">
+        <div className="bg-aboutImage flex flex-col pb-5 md:pb-0 px-[20px] md:flex-row items-center justify-around w-full h-[339px] mx-auto my-5 bg-cover bg-center md:-mt-60">
           <div className="text-white w-full md:w-[50%]">
             <p className="font-bold text-[16px] py-3 md:text-[24px]">
               رستوران های زنجیره ای ترخینه
@@ -139,29 +139,28 @@ export default function Home() {
               <>
                 <div
                   onClick={() => setIsActiveBranch(branch.id)}
-                  className={`flex md:flex-col h-[80px] relative w-[318px] md:w-[290px] lg:w-[288px] cursor-pointer md:h-fit rounded-4 border border-gray-4 ${
+                  className={`flex md:flex-col h-[80px] relative w-[380px] md:w-[290px] lg:w-[288px] cursor-pointer md:h-fit rounded-4 border border-gray-4 ${
                     branch.id == isActiveBranc && "shadow-drop-shadow-6"
                   }`}
                 >
                   <div
                     style={{ backgroundImage: `url(${branch.img})` }}
-                    className={`rounded-t-4 bg-cover md:w-full w-[144px] bg-clip-content lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px]`}
+                    className={`rounded-t-4 bg-cover md:w-full w-[190px] bg-clip-content lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px]`}
                   >
                     <div
                       className={`flex items-center justify-center w-full h-full ${
                         branch.id == isActiveBranc ? "flex" : "hidden"
                       }`}
                     >
-                      <div
-                        className={`w-full z-40 absolute h-full flex items-center justify-center ${
-                          branch.id == isActiveBranc ? "block" : "hidden"
-                        }`}
-                      >
+                      {/*Circel backg to image*/}
+                      <div className="z-40 absolute h-full flex items-center justify-center">
                         <div className="circleImage2 absolute w-[50px] h-[50px] bg-white rounded-full"></div>
                       </div>
+
                       <div className="absolute z-30 h-full flex items-center justify-center">
                         <div className="circleImage absolute w-[70px] h-[70px] bg-white rounded-full z-50"></div>
                       </div>
+
                       <div className="w-full h-full items-center bg-transparent flex justify-center">
                         <img
                           onClick={() => {
@@ -178,7 +177,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div
-                    className={`rounded-t-4 top-0 absolute md:w-full w-[144px] lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px] ${
+                    className={`rounded-t-4 top-0 absolute md:w-full w-[190px] lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px] ${
                       branch.id == isActiveBranc
                         ? "block opacity-[0.7] bg-black"
                         : "hidden"
@@ -208,7 +207,6 @@ export default function Home() {
         </div>
       </Layout>
       {isShowImage && <ModalImage setShow={setIsShowImage} img={srcImage} />}
-
     </div>
   );
 }

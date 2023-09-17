@@ -28,7 +28,7 @@ export default function Home() {
                   alt=""
                 />
                 <div className="w-[152px] md:h-[120px] h-[80px] mx-auto bg-primary lg:w-[260px] rounded-4 -mt-16 md:-mt-24 lg:-mt-36 lg:h-[160px] md:w-[220]"></div>
-                <p className="rounded-4 text-center p-[5px] -mt-3 bg-white w-fit mx-auto shadow-drop-shadow-4 md:py-[8px] md:px-[16px] md:w-[120px] lg:w-[155px]">
+                <p className="rounded-4 text-center p-[5px] -mt-3 bg-white mx-auto shadow-drop-shadow-4 md:py-[8px] md:px-[16px] w-[96px] md:w-[120px] lg:w-[155px]">
                   {food.title}
                 </p>
               </div>
@@ -77,6 +77,11 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+
+        <div>
+            <p className="font-bold text-[16px] md:text-[24px] text-center ">ترخینه گردی</p>
         </div>
       </Layout>
     </div>

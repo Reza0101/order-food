@@ -3,11 +3,33 @@ import Link from "next/link";
 import { useState } from "react";
 import { BiMenu, BiSearchAlt } from "react-icons/bi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { MdKeyboardArrowDown, MdOutlineMenuBook, MdOutlineRealEstateAgent } from "react-icons/md";
+import { ImLibrary } from "react-icons/im";
+import { FiUsers } from "react-icons/fi";
+import { LuPhoneCall } from "react-icons/Lu";
 
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
+
+  const linksNavbar = [
+    { id: 1, text: "صفحه اصلی", icon: <AiOutlineHome className="text-[18px]" /> },
+    {
+      id: 3,
+      text: "منو",
+      icon: <MdOutlineMenuBook className="text-[18px]" />,
+      underMenu: ["غذای اصلی", "پیش غذا", "دسر", "نوشیدنی"],
+    },
+    {
+      id: 2,
+      text: "شعبه",
+      icon: <ImLibrary className="text-[18px]" />,
+      underMenu: ["اکباتان", "چالوس", "اقدسیه", "ونک"],
+    },
+    { id: 4, text: "اعطای نمایندگی", icon: <MdOutlineRealEstateAgent className="text-[18px]" /> },
+    { id: 5, text: "درباره ما", icon: <FiUsers className="text-[18px]" /> },
+    { id: 6, text: "تماس باما", icon: <LuPhoneCall className="text-[18px]" /> },
+  ];
 
   return (
     <div className="w-full py-[8px] md:px-[54px] md:py-[16px]">
@@ -37,35 +59,39 @@ const Header = () => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`gap-2 z-50 md:gap-4 flex flex-col md:bg-white md:text-[#717171] text-white p-[20px] duration-500 transition md:flex-row fixed h-[100vh] md:h-fit md:bg-none top-0 bg-tint-7 md:relative pt-5 md:translate-x-0 ${
+            className={`gap-2 w-[256px] md:w-fit z-50 md:gap-4 flex flex-col md:bg-white md:text-[#717171] text-white duration-500 transition md:flex-row fixed h-[100vh] md:h-fit md:bg-none top-0 bg-white md:relative md:translate-x-0 ${
               isShowMenu
                 ? "translate-x-0 right-0 top-0"
                 : "translate-x-[100%] right-0 top-0"
             }`}
           >
-            <Link
-              href="/"
-              className="text-white md:text-primary font-bold link-navbar"
+            <div
+              className={`bg-menueImage bg-center w-[100%] h-[94px] md:hidden`}
             >
-              صفحه اصلی
-            </Link>
-            <Link className="flex link-navbar items-center" href="/">
-              شعبه
-              <MdKeyboardArrowDown />
-            </Link>
-            <Link className="flex link-navbar items-center" href="/">
-              منو
-              <MdKeyboardArrowDown />
-            </Link>
-            <Link className="link-navbar" href="/">
-              اعطای نمایندگی
-            </Link>
-            <Link className="link-navbar" href="/">
-              درباره ما
-            </Link>
-            <Link className="link-navbar" href="/">
-              تماس با ما
-            </Link>
+              <img
+                src="./Images/LogoWhite.png"
+                className="w-[63px] h-[30px] mt-[32px] mr-[18px] right-7"
+                alt=""
+              />
+            </div>
+            {linksNavbar.map((item) => (
+              <>
+                <Link
+                  href="/"
+                  className="md:text-primary px-[16px] link-navbar text-black"
+                >
+                  <div className="flex items-center gap-2 mt-[8px] border-b border-gray-4 pb-1">
+                    <div className={isShowMenu ? "block" : "hidden"}>
+                      {item.icon}
+                    </div>
+                    <div onClick={() => setIsShowMenu(false)} className="flex items-center h-[22px] w-full ">
+                      {item.text}
+                      {item.underMenu && <MdKeyboardArrowDown />}
+                    </div>
+                  </div>
+                </Link>
+              </>
+            ))}
           </div>
         </div>
 

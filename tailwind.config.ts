@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage : {
-        'aboutImage': "url(/Images/about.png)"
+        'aboutImage': "url(/Images/about.png)",
+        'menueImage': "url(/Images/topFrame.png)",
       },
       borderRadius: {
         "4": "4px",

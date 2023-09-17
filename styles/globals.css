@@ -11,31 +11,82 @@ body {
     overflow-x: hidden;
     font-family: estedad;
 }
+
 .link-navbar {
     position: relative;
     padding-bottom: 5px;
-    overflow: hidden; 
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.link-navbar:hover{
+
+.link-navbar:hover {
     color: #417F56;
     font-weight: bold;
 }
+
 .closeMenu {
     background-color: rgba(0, 0, 0, 0.813);
-    /* backdrop-filter: blur(10px); */
 }
-.icon-navbar:hover{
+
+.icon-navbar:hover {
     /* transform: scale(120%); */
     background-color: #417F56;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
-    right:5px;
+    right: 5px;
     padding: 30px;
     color: #417F56 !important;
 }
-.swiper-pagination-bullet{
+
+.swiper-pagination-bullet {
     background-color: #417F56 !important;
+}
+.circleImage {
+    animation: MoveAndSpin 2s linear infinite;
+
+}
+.circleImage2 {
+    animation: MoveAndSpin2 1s linear infinite;
+
+}
+
+@keyframes MoveAndSpin {
+    0% {
+        opacity: 1;
+        transform: scale(0%);
+    }
+    50% {
+        transform: scale(50%);
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0; 
+        transform: scale(100%);
+    }
+}
+
+@keyframes MoveAndSpin2 {
+    0% {
+        opacity: 1;
+        transform: scale(0%);
+    }
+    50% {
+        transform: scale(40%);
+    }
+
+    90% {
+        opacity: 0;
+        transform: scale(80%);
+    }
+    100% {
+        opacity: 0; 
+        transform: scale(100%);
+    }
 }

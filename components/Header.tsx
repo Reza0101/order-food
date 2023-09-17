@@ -4,7 +4,11 @@ import { useState } from "react";
 import { BiMenu, BiSearchAlt } from "react-icons/bi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
-import { MdKeyboardArrowDown, MdOutlineMenuBook, MdOutlineRealEstateAgent } from "react-icons/md";
+import {
+  MdKeyboardArrowDown,
+  MdOutlineMenuBook,
+  MdOutlineRealEstateAgent,
+} from "react-icons/md";
 import { ImLibrary } from "react-icons/im";
 import { FiUsers } from "react-icons/fi";
 import { LuPhoneCall } from "react-icons/Lu";
@@ -13,7 +17,11 @@ const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
 
   const linksNavbar = [
-    { id: 1, text: "صفحه اصلی", icon: <AiOutlineHome className="text-[18px]" /> },
+    {
+      id: 1,
+      text: "صفحه اصلی",
+      icon: <AiOutlineHome className="text-[18px]" />,
+    },
     {
       id: 3,
       text: "منو",
@@ -26,7 +34,11 @@ const Header = () => {
       icon: <ImLibrary className="text-[18px]" />,
       underMenu: ["اکباتان", "چالوس", "اقدسیه", "ونک"],
     },
-    { id: 4, text: "اعطای نمایندگی", icon: <MdOutlineRealEstateAgent className="text-[18px]" /> },
+    {
+      id: 4,
+      text: "اعطای نمایندگی",
+      icon: <MdOutlineRealEstateAgent className="text-[18px]" />,
+    },
     { id: 5, text: "درباره ما", icon: <FiUsers className="text-[18px]" /> },
     { id: 6, text: "تماس باما", icon: <LuPhoneCall className="text-[18px]" /> },
   ];
@@ -76,20 +88,42 @@ const Header = () => {
             </div>
             {linksNavbar.map((item) => (
               <>
-                <Link
-                  href="/"
-                  className="md:text-primary px-[16px] link-navbar text-black"
-                >
-                  <div className="flex items-center gap-2 mt-[8px] border-b border-gray-4 pb-1">
+                <div className="md:text-primary group px-[16px] md:px-0 link-navbar text-black">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2 mt-[8px] border-b md:border-none border-gray-4 pb-1"
+                  >
                     <div className={isShowMenu ? "block" : "hidden"}>
                       {item.icon}
                     </div>
-                    <div onClick={() => setIsShowMenu(false)} className="flex items-center h-[22px] w-full ">
+                    <div
+                      onClick={() => setIsShowMenu(false)}
+                      className="flex items-center h-[22px] w-full "
+                    >
                       {item.text}
                       {item.underMenu && <MdKeyboardArrowDown />}
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                  {item.underMenu && (
+                    <>
+                      <div className="hidden  items-start bottom-0 group-hover:flex flex-col bg-white gap-1 p-2 justify-center">
+                        {item.underMenu?.map((item) => (
+                          <div className="flex items-center flex-row-reverse">
+                            <div>
+                              <Link
+                                onClick={() => setIsShowMenu(false)}
+                                href="/"
+                                className="text-gray-7 hover:text-primary pb-2 text-[12px] w-full"
+                              >
+                                {item}
+                              </Link>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </>
             ))}
           </div>

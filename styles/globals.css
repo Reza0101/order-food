@@ -46,12 +46,18 @@ body {
 }
 .circleImage {
     animation: MoveAndSpin 2s linear infinite;
-
 }
 .circleImage2 {
     animation: MoveAndSpin2 1s linear infinite;
-
 }
+
+.swiper-pagination-bullet{
+    background-color: white !important;
+}
+.swiper-button-prev, .swiper-button-next{
+    color: white !important;
+}
+
 
 @keyframes MoveAndSpin {
     0% {

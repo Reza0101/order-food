@@ -85,7 +85,7 @@ export default function Home() {
               پایه معماری و طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور
               شان شما عزیزان ارائه دهیم.
             </p>
-            <button className="border flex items-center w-[152px] justify-center my-5 mr-auto rounded-4 gap-1 border-white bg-transparent">
+            <button className="border hover:bg-primary py-1 hover:border-primary duration-200 flex items-center w-[152px] justify-center my-5 mr-auto rounded-4 gap-1 border-white bg-transparent">
               اطلاعات بیشتر
               <MdKeyboardArrowLeft className="text-[16px]" />
             </button>

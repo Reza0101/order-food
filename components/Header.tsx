@@ -12,9 +12,12 @@ import {
 import { ImLibrary } from "react-icons/im";
 import { FiUsers } from "react-icons/fi";
 import { LuPhoneCall } from "react-icons/lu";
+import SearchModal from "./SearchModal";
 
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
+  const [isShowSearchBox, setIsShowSearchBox] = useState<boolean>(false) 
+
 
   const linksNavbar = [
     {
@@ -125,7 +128,7 @@ const Header = () => {
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
             href="/"
           >
-            <BiSearchAlt className="hover:text-white duration-300" />
+            <BiSearchAlt onClick={() => setIsShowSearchBox(true)} className="hover:text-white duration-300" />
           </Link>
           <Link
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
@@ -141,6 +144,9 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      {
+        isShowSearchBox && <SearchModal setShow={setIsShowSearchBox} />
+      }
     </div>
   );
 };

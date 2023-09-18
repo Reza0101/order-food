@@ -4,6 +4,7 @@ import SliderLanding from "@/components/Slider-Landing";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 import ModalImage from "@/components/ModalImage";
+import SearchBox from "@/components/SearchBox";
 
 export default function Home() {
   const [isActiveBranc, setIsActiveBranch] = useState<number>();
@@ -49,12 +50,18 @@ export default function Home() {
     <div className="">
       <Layout>
         <SliderLanding />
+
+        {/* Search box */}
+        <div className="md:hidden">
+          <SearchBox />
+        </div>
+
         {/* Resturan menu setion */}
-        <div className="mt-10">
-          <p className="text-center text-gray-8 font-bold text-[16px] md:text-[24px] mt-[20px]">
+        <div className="mt-7">
+          <p className="text-center text-gray-8 font-bold text-[16px] md:text-[24px]">
             منوی رستوران
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-2 my-8 gap-7 md:gap-0 w-[100%]">
+          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-2 my-5 gap-7 md:gap-0 w-[100%]">
             {menufood.map((food) => (
               <div>
                 <img
@@ -135,8 +142,6 @@ export default function Home() {
             ترخینه گردی
           </p>
 
-
-          
           <div className="flex flex-col md:flex-row my-5 justify-center items-center gap-5 px-[20px]">
             {branchs.map((branch) => (
               <>
@@ -148,7 +153,10 @@ export default function Home() {
                 >
                   <div
                     style={{ backgroundImage: `url(${branch.img})` }}
-                    className={`rounded-t-4 bg-cover md:w-full ${branch.id === isActiveBranc && 'md:h-[170px] xl:h-[200px] lg:h-[200px]'} w-[190px] bg-clip-content lg:w-[240px] xl:w-[300px] h-[80px] md:h-[170px] bg-center lg:h-[230px]`}
+                    className={`rounded-t-4 bg-cover md:w-full ${
+                      branch.id === isActiveBranc &&
+                      "md:h-[170px] xl:h-[200px] lg:h-[200px]"
+                    } w-[190px] bg-clip-content lg:w-[240px] xl:w-[300px] h-[80px] md:h-[170px] bg-center lg:h-[230px]`}
                   >
                     <div
                       className={`flex items-center justify-center w-full h-full ${
@@ -207,12 +215,6 @@ export default function Home() {
               </>
             ))}
           </div>
-
-
-
-
-
-          
         </div>
       </Layout>
       {isShowImage && <ModalImage setShow={setIsShowImage} img={srcImage} />}

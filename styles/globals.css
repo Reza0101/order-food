@@ -58,6 +58,18 @@ body {
     color: white !important;
 }
 
+.modalAnimation {
+    animation: modalSpin .4s linear;
+}
+
+@keyframes modalSpin {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 @keyframes MoveAndSpin {
     0% {

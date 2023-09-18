@@ -13,7 +13,6 @@ body {
 }
 
 .link-navbar {
-    position: relative;
     padding-bottom: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -27,6 +26,7 @@ body {
 
 .closeMenu {
     background-color: rgba(0, 0, 0, 0.813);
+    position: fixed;
 }
 
 .icon-navbar:hover {

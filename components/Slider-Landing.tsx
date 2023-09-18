@@ -47,7 +47,7 @@ export default function sliderNavbar() {
         {sliderItems.map((slider) => (
           <SwiperSlide className="relative">
             <img
-              className="w-[100%] h-[176px] sm:h-[220px] md:h-[336px] lg:h-[400px]"
+              className="w-[100%] object-cover h-[176px] sm:h-[220px] md:h-[336px] lg:h-[400px]"
               src={slider.img}
               alt=""
             />

@@ -50,7 +50,7 @@ export default function Home() {
       <Layout>
         <SliderLanding />
         {/* Resturan menu setion */}
-        <div>
+        <div className="mt-10">
           <p className="text-center text-gray-8 font-bold text-[16px] md:text-[24px] mt-[20px]">
             منوی رستوران
           </p>
@@ -130,22 +130,25 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          <p className="font-bold text-[16px] md:text-[24px] text-center ">
+        <div className="my-10">
+          <p className="font-bold text-[16px] md:text-[24px] pb-2 text-center ">
             ترخینه گردی
           </p>
+
+
+          
           <div className="flex flex-col md:flex-row my-5 justify-center items-center gap-5 px-[20px]">
             {branchs.map((branch) => (
               <>
                 <div
                   onClick={() => setIsActiveBranch(branch.id)}
-                  className={`flex md:flex-col h-[80px] relative w-[380px] md:w-[290px] lg:w-[288px] cursor-pointer md:h-fit rounded-4 border border-gray-4 ${
+                  className={`flex md:flex-col h-[80px] relative w-[380px] md:w-[290px] lg:w-[240px] xl:w-[300px] cursor-pointer md:h-[300px] lg:h-[334px] rounded-4 border border-gray-4 ${
                     branch.id == isActiveBranc && "shadow-drop-shadow-6"
                   }`}
                 >
                   <div
                     style={{ backgroundImage: `url(${branch.img})` }}
-                    className={`rounded-t-4 bg-cover md:w-full w-[190px] bg-clip-content lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px]`}
+                    className={`rounded-t-4 bg-cover md:w-full ${branch.id === isActiveBranc && 'md:h-[170px] xl:h-[200px] lg:h-[200px]'} w-[190px] bg-clip-content lg:w-[240px] xl:w-[300px] h-[80px] md:h-[170px] bg-center lg:h-[230px]`}
                   >
                     <div
                       className={`flex items-center justify-center w-full h-full ${
@@ -177,17 +180,17 @@ export default function Home() {
                     </div>
                   </div>
                   <div
-                    className={`rounded-t-4 top-0 absolute md:w-full w-[190px] lg:w-[288px] h-[80px] md:h-[180px] bg-center lg:h-[230px] ${
+                    className={`rounded-r-4 md:rounded-t-4 md:rounded-r-none top-0 absolute md:w-full w-[190px] lg:w-[240px] xl:w-[300px] h-[80px] bg-center lg:h-[230px] ${
                       branch.id == isActiveBranc
-                        ? "block opacity-[0.7] bg-black"
+                        ? "block opacity-[0.7] bg-black md:h-[170px] xl:h-[200px] lg:h-[200px]"
                         : "hidden"
                     }`}
                   ></div>
                   <div className="flex flex-col items-center justify-center w-1/2 md:w-full px-[4px] py-2">
-                    <p className="text-[14px] lg:text-[20px] md:text-[18px]">
+                    <p className="text-[14px] xl:text-[20px] md:text-[18px]">
                       {branch.nameBrach}
                     </p>
-                    <p className="text-[10px] md:text-[12px] lg:text-[14px] text-center">
+                    <p className="text-[10px] md:text-[12px] xl:text-[14px] text-center">
                       {branch.location}
                     </p>
                     {isActiveBranc == branch.id && (
@@ -204,6 +207,12 @@ export default function Home() {
               </>
             ))}
           </div>
+
+
+
+
+
+          
         </div>
       </Layout>
       {isShowImage && <ModalImage setShow={setIsShowImage} img={srcImage} />}

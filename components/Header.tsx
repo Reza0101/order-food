@@ -20,27 +20,37 @@ const Header = () => {
     {
       id: 1,
       text: "صفحه اصلی",
+      isActive: true,
       icon: <AiOutlineHome className="text-[18px]" />,
     },
     {
       id: 3,
       text: "منو",
       icon: <MdOutlineMenuBook className="text-[18px]" />,
-      underMenu: ["غذای اصلی", "پیش غذا", "دسر", "نوشیدنی"],
     },
     {
       id: 2,
       text: "شعبه",
       icon: <ImLibrary className="text-[18px]" />,
-      underMenu: ["اکباتان", "چالوس", "اقدسیه", "ونک"],
     },
     {
       id: 4,
+      isActive: true,
       text: "اعطای نمایندگی",
       icon: <MdOutlineRealEstateAgent className="text-[18px]" />,
     },
-    { id: 5, text: "درباره ما", icon: <FiUsers className="text-[18px]" /> },
-    { id: 6, text: "تماس باما", icon: <LuPhoneCall className="text-[18px]" /> },
+    {
+      id: 5,
+      isActive: true,
+      text: "درباره ما",
+      icon: <FiUsers className="text-[18px]" />,
+    },
+    {
+      id: 6,
+      isActive: true,
+      text: "تماس باما",
+      icon: <LuPhoneCall className="text-[18px]" />,
+    },
   ];
 
   return (
@@ -66,12 +76,12 @@ const Header = () => {
           onClick={() => setIsShowMenu(false)}
           className={`${
             isShowMenu &&
-            "w-[100%] h-[100vh] flex closeMenu absolute top-0 left-0 z-40 duration-300"
+            "w-[100%] h-[100%] flex closeMenu md:static top-0 left-0 z-40 duration-300"
           } duration-300 transition`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`gap-2 w-[256px] md:w-fit z-50 md:gap-4 flex flex-col md:bg-white md:text-[#717171] text-white duration-500 transition md:flex-row fixed h-[100vh] md:h-fit md:bg-none top-0 bg-white md:relative md:translate-x-0 ${
+            className={`gap-2 w-[256px] md:w-fit z-50 md:gap-4 flex flex-col md:bg-white md:text-[#717171] text-white duration-500 transition md:flex-row fixed md:static h-[100%] md:h-fit md:bg-none top-0 bg-white md:translate-x-0 ${
               isShowMenu
                 ? "translate-x-0 right-0 top-0"
                 : "translate-x-[100%] right-0 top-0"
@@ -97,32 +107,13 @@ const Header = () => {
                       {item.icon}
                     </div>
                     <div
-                      onClick={() => setIsShowMenu(false)}
+                      onClick={() => item.isActive && setIsShowMenu(false)}
                       className="flex items-center h-[22px] w-full "
                     >
+
                       {item.text}
-                      {item.underMenu && <MdKeyboardArrowDown />}
                     </div>
                   </Link>
-                  {item.underMenu && (
-                    <>
-                      <div className="hidden  items-start bottom-0 group-hover:flex flex-col bg-white gap-1 p-2 justify-center">
-                        {item.underMenu?.map((item) => (
-                          <div className="flex items-center flex-row-reverse">
-                            <div>
-                              <Link
-                                onClick={() => setIsShowMenu(false)}
-                                href="/"
-                                className="text-gray-7 hover:text-primary pb-2 text-[12px] w-full"
-                              >
-                                {item}
-                              </Link>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  )}
                 </div>
               </>
             ))}

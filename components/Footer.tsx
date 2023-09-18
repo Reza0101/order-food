@@ -112,7 +112,7 @@ const Footer = () => {
             />
           </div>
           <textarea
-            className="bg-transparent border rounded-4 h-[120px] border-gray-1 placeholder:text-white p-2 w-1/2 "
+            className="bg-transparent resize-none border rounded-4 h-[110px] md:h-[120px] border-gray-1 placeholder:text-white p-2 w-1/2 "
             id=""
             placeholder="پیام شما"
           ></textarea>

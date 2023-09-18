@@ -10,6 +10,8 @@ const Layout = ({children}: propsElement) => {
                 {children}
             </main>
             <Footer />
+            
+
         </div>
     )
 }

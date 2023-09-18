@@ -10,7 +10,7 @@ const ModalImage = ({ img, setShow }: imagesModal) => {
       <img
         onClick={(e) => e.stopPropagation()}
         src={img}
-        className="fixed z-50 w-[90%] md:w-[70%] mx-auto top-[200px] md:top-[150px]"
+        className="fixed z-50 w-[80%] md:w-[60%] mx-auto top-[200px] md:top-[150px]"
         alt=""
       />
     </div>

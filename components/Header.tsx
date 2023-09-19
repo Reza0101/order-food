@@ -19,39 +19,46 @@ const Header = () => {
   const [isShowSearchBox, setIsShowSearchBox] = useState<boolean>(false) 
 
 
+
   const linksNavbar = [
     {
       id: 1,
       text: "صفحه اصلی",
+      route: '/',
       isActive: true,
       icon: <AiOutlineHome className="text-[18px]" />,
     },
     {
       id: 3,
       text: "منو",
+      route: '/',
       icon: <MdOutlineMenuBook className="text-[18px]" />,
     },
     {
       id: 2,
       text: "شعبه",
+      route: '/branch',
       icon: <ImLibrary className="text-[18px]" />,
     },
     {
       id: 4,
       isActive: true,
       text: "اعطای نمایندگی",
+      route: '/',
       icon: <MdOutlineRealEstateAgent className="text-[18px]" />,
     },
     {
       id: 5,
       isActive: true,
       text: "درباره ما",
+      route: '/',
       icon: <FiUsers className="text-[18px]" />,
     },
     {
       id: 6,
       isActive: true,
       text: "تماس باما",
+      route: '/',
       icon: <LuPhoneCall className="text-[18px]" />,
     },
   ];
@@ -65,7 +72,7 @@ const Header = () => {
         >
           <BiMenu />
         </div>
-        <div className={`${isShowMenu ? "hidden" : "flex"} md:hidden`}></div>
+        <div className={`${isShowMenu ? "hidden" : "flex"} sm:hidden`}></div>
         <Link href="/">
           <Image
             width={100}
@@ -79,19 +86,19 @@ const Header = () => {
           onClick={() => setIsShowMenu(false)}
           className={`${
             isShowMenu &&
-            "w-[100%] h-[100%] flex closeMenu md:static top-0 left-0 z-40 duration-300"
+            "w-[100%] h-[100%] sm:bg-white flex closeMenu sm:static sm:justify-center top-0 left-0 z-40 duration-300"
           } duration-300 transition`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`gap-2 w-[256px] md:w-fit z-50 md:gap-4 flex flex-col md:bg-white md:text-[#717171] text-white duration-500 transition md:flex-row fixed md:static h-[100%] md:h-fit md:bg-none top-0 bg-white md:translate-x-0 ${
+            className={`gap-2 w-[256px] sm:w-fit z-50 sm:gap-4 flex flex-col sm:bg-white sm:text-[#717171] text-white duration-500 transition sm:flex-row fixed sm:static h-[100%] sm:h-fit sm:bg-none top-0 bg-white sm:translate-x-0 ${
               isShowMenu
                 ? "translate-x-0 right-0 top-0"
                 : "translate-x-[100%] right-0 top-0"
             }`}
           >
             <div
-              className={`bg-menueImage bg-center w-[100%] h-[94px] md:hidden`}
+              className={`bg-menueImage bg-center w-[100%] h-[94px] sm:hidden`}
             >
               <img
                 src="./Images/LogoWhite.png"
@@ -101,12 +108,12 @@ const Header = () => {
             </div>
             {linksNavbar.map((item) => (
               <>
-                <div className="md:text-primary group px-[16px] md:px-0 link-navbar text-black">
+                <div className="sm:text-primary group px-[16px] sm:px-0 link-navbar text-black">
                   <Link
-                    href="/"
-                    className="flex items-center gap-2 mt-[8px] border-b md:border-none border-gray-4 pb-1"
+                    href={item.route}
+                    className="flex items-center gap-2 mt-[8px] border-b sm:border-none border-gray-4 pb-1"
                   >
-                    <div className={isShowMenu ? "block" : "hidden"}>
+                    <div className={`${isShowMenu ? "block" : "hidden"} sm:hidden`}>
                       {item.icon}
                     </div>
                     <div

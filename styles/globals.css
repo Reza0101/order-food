@@ -27,6 +27,7 @@ body {
 .closeMenu {
     background-color: rgba(0, 0, 0, 0.813);
     position: fixed;
+    
 }
 
 .icon-navbar:hover {

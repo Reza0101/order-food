@@ -4,7 +4,7 @@ import SliderBox from "@/components/Slider-food";
 import Link from "next/link";
 import { BiPhoneCall } from "react-icons/bi";
 import { GrLocation } from "react-icons/gr";
-import {MdOutlineWatchLater} from 'react-icons/md'
+import { MdOutlineWatchLater } from "react-icons/md";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,9 +12,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 const branch = () => {
+  const starImageSrc = [
+    "./Images/star/Rate1.png",
+    "./Images/stare/Rate2.png",
+    "./Images/star/Rate3.png",
+    "./Images/star/Rate4.png",
+    "./Images/star/Rate5.png",
+  ];
   const specialOffer = [
     {
       id: 1,
@@ -177,6 +184,54 @@ const branch = () => {
     },
   ];
 
+  const usersComment = [
+    {
+      id: 1,
+      name: "سردار وظیفه",
+      img: "./Images/sardar.png",
+      comment:
+        "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
+      date: ["15", "آبان", "1401"],
+      star: 5,
+    },
+    {
+      id: 2,
+      name: "آرزو محمد علیزاده",
+      img: "./Images/arezo.png",
+      comment:
+        "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
+      date: ["23", "اسفند", "1402"],
+      star: 3,
+    },
+    {
+      id: 3,
+      name: "مهدی رضایی",
+      img: "./Images/user.png",
+      comment:
+        "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
+      date: ["15", "بهمن", "1402"],
+      star: 4,
+    },
+    {
+      id: 4,
+      name: "رضا احمدی",
+      img: "./Images/sardar.png",
+      comment:
+        "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
+      date: ["1", "مهر", "1400"],
+      star: 5,
+    },
+    {
+      id: 5,
+      name: "آرزو محمد علیزاده",
+      img: "./Images/user.png",
+      comment:
+        "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
+      date: ["23", "اسفند", "1402"],
+      star: 5,
+    },
+  ];
+
   return (
     <>
       <Layout>
@@ -203,7 +258,11 @@ const branch = () => {
           <img src="./Images/note.png" alt="" />
           <p>مشاهده ی منوی کامل</p>
         </Link>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper my-2"
+        >
           {branchs.map((item) => (
             <SwiperSlide>
               <p className="text-center text-[16px] md:text-[14px] font-[700] pb-[16px]">
@@ -214,7 +273,7 @@ const branch = () => {
                 className="w-full z-10 h-[176px]  md:h-[210px] lg:h-[336px]"
                 alt=""
               />
-              <div className="mx-auto w-[320px] relative bg-white z-50 md:w-[510px] p-2 -mt-7 border-[1px] md:border-[2px] lg:border-[3px] md:rounded-8 items-start lg:w-[810px] rounded-4 grid grid-cols-2 grid-rows-2 md:grid-rows-1 md:grid-cols-3 border-primary">
+              <div className="mx-auto my-2 w-[320px] relative bg-white z-50 md:w-[510px] p-2 -mt-7 border-[1px] md:border-[2px] lg:border-[3px] md:rounded-8 items-start lg:w-[810px] rounded-4 grid grid-cols-2 grid-rows-2 md:grid-rows-1 md:grid-cols-3 border-primary">
                 <div className="flex gap-1 md:flex-col items-center justify-center col-start-1 row-start-2 md:row-start-1 md:col-start-1">
                   <BiPhoneCall className="w-[16px] h-[16px] md:w-[25px] md:h-[25px] lg:w-[32px] lg:h-[32px]" />
                   <div className="flex flex-col md:text-[16px] text-[10px]">
@@ -235,6 +294,48 @@ const branch = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <p className="text-center text-[16px] md:text-[14px] font-[700] pb-[16px]">
+          نظرات کاربران
+        </p>
+        <div className="mx-[20px] md:mx-[60px] lg:mx-[100px]">
+          <Swiper
+            breakpoints={{
+              750: {
+                slidesPerView: 2,
+              },
+            }}
+            slidesPerView={1.8}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {usersComment.map((comm) => (
+              <SwiperSlide className="border rounded-4 mb-8 border-gray-4 md:rounded-8 p-3 w-[252px]">
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-1 items-center ml-2 w-[120px]">
+                    <img className="w-[56px] h-[56px]" src={comm.img} alt="" />
+                    <p className="text-[10px] md:text-[14px] w-max">{comm.name}</p>
+                    <div className="flex items-center text-[10px] md:text-[14px] gap-1">
+                      <p>{comm.date[0]}</p>
+                      <p>{comm.date[1]}</p>
+                      <p>{comm.date[2]}</p>
+                    </div>
+                  </div>
+                  <p className="text-[10px] line-clamp-4 md:text-[16px] w-fit text-justify">
+                    {comm.comment}
+                  </p>
+                </div>
+                <div className="flex justify-end gap-1">
+                    <img src={starImageSrc[comm.star - 1]} alt="" />
+                    <span>{comm.star}</span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </Layout>
     </>
   );

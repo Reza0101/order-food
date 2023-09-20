@@ -6,6 +6,10 @@
     font-family: estedad;
     src: url(./../fonts/estedad.woff2);
 }
+.swiper-pagination-bullet {
+    background-color: #417F56 !important;
+    margin: 100px;
+}
 
 body {
     overflow-x: hidden;
@@ -43,9 +47,6 @@ body {
     padding: 30px;
 }
 
-.swiper-pagination-bullet {
-    background-color: #417F56 !important;
-}
 .circleImage {
     animation: MoveAndSpin 2s linear infinite;
 }
@@ -53,9 +54,6 @@ body {
     animation: MoveAndSpin2 1s linear infinite;
 }
 
-.swiper-pagination-bullet{
-    background-color: white !important;
-}
 .swiper-button-prev, .swiper-button-next{
     color: white !important;
 }

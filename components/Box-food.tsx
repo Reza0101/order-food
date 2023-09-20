@@ -38,7 +38,7 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
               {score}%
             </p>
           )}
-          <p className={`text-gray-5 ${score &&  'line-through'}`}>{price}</p>
+          <p className={`text-gray-5 ${score && "line-through"}`}>{price}</p>
         </div>
       </div>
       <div className="flex my-2 px-[8px] md:px-[16px] items-center justify-between text-[10px] md:text-[16px]">

@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import './style.module.css'
 
 // import required modules
 import { Pagination } from "swiper/modules";
@@ -18,7 +17,7 @@ export default function SliderBox({ data }: any) {
     <div dir="rtl">
       <Swiper
         breakpoints={{
-          500: {
+          550: {
             slidesPerView: 3,
           },
           771: {

@@ -1,7 +1,7 @@
 import { AiTwotoneHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
+const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
   const discountedAmount = score && (score * price) / 100;
   const starImageSrc = [
     "./Images/star/Rate1.png",
@@ -12,10 +12,10 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
   ];
 
   return (
-    <div className="w-[168px] bg-white h-[231px] md:w-[288px] md:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
+    <div className="w-[180px] bg-white h-[231px] md:w-[230px] md:h-[350px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
       <img
         src={img}
-        className="h-[109px] bg-cover bg-center md:h-[256px] w-full rounded-t-4 md:rounded-t-8"
+        className="h-[109px] bg-cover bg-center md:h-[200px] lg:h-[256px] w-full rounded-t-4 md:rounded-t-8"
         alt=""
       />
       <p className="text-[12px] text-center py-2 font-[400] md:text-[20px]">
@@ -43,7 +43,7 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
       </div>
       <div className="flex my-2 px-[8px] md:px-[16px] items-center justify-between text-[10px] md:text-[16px]">
         <div className="flex flex-row-reverse items-center gap-1">
-          <p className="text-gray-4 text-[10px]">({fodes} امتیاز)</p>
+          <p className="text-gray-4 text-[10px] hidden md:block">({votes} امتیاز)</p>
           {star}
           <img src={starImageSrc[star - 1]} alt="" />
         </div>

@@ -17,11 +17,11 @@ export default function SliderBox({ data }: any) {
     <div dir="rtl">
       <Swiper
         breakpoints={{
-          550: {
+          600: {
             slidesPerView: 3,
           },
-          771: {
-            slidesPerView: 2
+          800: {
+            slidesPerView: 3
           },
           1024: {
             slidesPerView: 3

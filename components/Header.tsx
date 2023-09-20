@@ -117,7 +117,7 @@ const Header = () => {
                       {item.icon}
                     </div>
                     <div
-                      onClick={() => item.isActive && setIsShowMenu(false)}
+                      onClick={() => setIsShowMenu(false)}
                       className="flex items-center h-[22px] w-full "
                     >
 

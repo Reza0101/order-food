@@ -10,6 +10,9 @@
 body {
     overflow-x: hidden;
     font-family: estedad;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: default;
 }
 
 .link-navbar {
@@ -31,16 +34,15 @@ body {
 }
 
 .icon-navbar:hover {
-    /* transform: scale(120%); */
     background-color: #417F56;
 }
 
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev {
     right: 5px;
     padding: 30px;
     color: #417F56 !important;
-}
+} */
 
 .swiper-pagination-bullet {
     background-color: #417F56 !important;

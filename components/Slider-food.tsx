@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import './style.module.css'
 
 // import required modules
 import { Pagination } from "swiper/modules";
@@ -31,10 +32,7 @@ export default function SliderBox({ data }: any) {
           }
         }}
         slidesPerView={1.8}
-        spaceBetween={20}
-        pagination={{
-          clickable: true,
-        }}
+        spaceBetween={10}
         modules={[Pagination]}
         className="mySwiper"
       >

@@ -51,7 +51,9 @@ export default function sliderNavbar() {
               src={slider.img}
               alt=""
             />
-            <p className="absolute top-0 w-[100%] h-[100%] flex justify-center items-center text-white text-2xl font-bold">{slider.title}</p>
+            <p className="absolute top-0 w-[100%] h-[100%] flex justify-center items-center text-white text-2xl font-bold">
+              {slider.title}
+            </p>
           </SwiperSlide>
         ))}
       </Swiper>

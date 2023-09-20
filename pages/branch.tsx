@@ -41,16 +41,54 @@ const branch = () => {
       star: 3,
     },
   ];
+  const popularFood = [
+    {
+      id: 1,
+      img: "./Images/dolme.png",
+      name: "پنینی اسفناج",
+      price: 210000,
+      score: 15,
+      votes: 20,
+      star: 3,
+    },    {
+      id: 1,
+      img: "./Images/dolme.png",
+      name: "پیتزا بیرونی",
+      price: 100000,
+      votes: 51,
+      star: 4,
+    },    {
+      id: 1,
+      img: "./Images/dolme.png",
+      name: "راتاتویی",
+      price: 180000,
+      score: 45,
+      votes: 43,
+      star: 4,
+    },    {
+      id: 1,
+      img: "./Images/dolme.png",
+      name: "بورانی بادمجان",
+      price: 170000,
+      score: 22,
+      votes: 75,
+      star: 5,
+    },
+  ]
 
   return (
     <>
       <Layout>
         <SliderNavbar />
 
-        <div className="px-[20px] md:px-[40px] lg:px-[50px] my-5">
+        <div className="px-[20px] md:px-[60px] lg:px-[80px] my-5">
           <p className="text-[16px] py-2 md:text-[24px]">پیشنهاد ویژه</p>
             <SliderBox data={specialOffer} />
         </div>
+        <div className="bg-primary pb-[30px] px-[20px] md:px-[60px] lg:px-[80px]">
+              <p className="text-[16px] text-white py-2 md:text-[24px]">غذا های محبوب</p>
+              <SliderBox data={popularFood} />
+            </div>
       </Layout>
     </>
   );

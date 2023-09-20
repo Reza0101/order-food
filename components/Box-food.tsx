@@ -12,7 +12,7 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
   ];
 
   return (
-    <div className="w-[168px] h-[231px] md:w-[288px] md:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
+    <div className="w-[168px] bg-white h-[231px] md:w-[288px] md:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
       <img
         src={img}
         className="h-[109px] bg-cover bg-center md:h-[256px] w-full rounded-t-4 md:rounded-t-8"
@@ -27,12 +27,18 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
         ) : (
           <div className="flex gap-1 items-center text-gray-4">
             <AiOutlineHeart className="w-[16px] cursor-pointer h-[16px]" />
-            <p className="hidden md:block text-[10px]">افزودن به علاقه مندی ها</p>
+            <p className="hidden md:block text-[10px]">
+              افزودن به علاقه مندی ها
+            </p>
           </div>
         )}
         <div className="flex items-center gap-1 text-[10px]">
-          <p className="px-[4px] text-error bg-[#FFF2F2] rounded-8">{score}%</p>
-          <p className="line-through text-gray-5">{price}</p>
+          {score && (
+            <p className="px-[4px] text-error bg-[#FFF2F2] rounded-8">
+              {score}%
+            </p>
+          )}
+          <p className={`text-gray-5 ${score &&  'line-through'}`}>{price}</p>
         </div>
       </div>
       <div className="flex my-2 px-[8px] md:px-[16px] items-center justify-between text-[10px] md:text-[16px]">

@@ -17,8 +17,11 @@ export default function SliderBox({ data }: any) {
     <div dir="rtl">
       <Swiper
         breakpoints={{
-          768: {
-            slidesPerView: 2,
+          500: {
+            slidesPerView: 3,
+          },
+          771: {
+            slidesPerView: 2
           },
           1024: {
             slidesPerView: 3
@@ -27,7 +30,7 @@ export default function SliderBox({ data }: any) {
             slidesPerView: 4
           }
         }}
-        slidesPerView={1.6}
+        slidesPerView={1.8}
         spaceBetween={20}
         pagination={{
           clickable: true,

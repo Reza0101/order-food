@@ -15,7 +15,7 @@ const BoxFood = ({ img, name, price, star, score, fodes, like }: any) => {
     <div className="w-[168px] h-[231px] md:w-[288px] md:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
       <img
         src={img}
-        className="h-[109px] md:h-[256px] w-full rounded-t-4 md:rounded-t-8"
+        className="h-[109px] bg-cover bg-center md:h-[256px] w-full rounded-t-4 md:rounded-t-8"
         alt=""
       />
       <p className="text-[12px] text-center py-2 font-[400] md:text-[20px]">

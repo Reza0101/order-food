@@ -102,7 +102,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-2">
                 <img
                   className="w-[24px] md:w-[48px]"
-                  src="./Images/about/user.png"
+                  src="./Images/logos/user.png"
                   alt=""
                 />
                 <p>پرسنلی محرب و حرفه ای</p>
@@ -110,7 +110,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-2">
                 <img
                   className="w-[24px] md:w-[48px]"
-                  src="./Images/about/diagram.png"
+                  src="./Images/logos/diagram.png"
                   alt=""
                 />
                 <p>کیفیت بالای غذا ها</p>
@@ -120,7 +120,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-2">
                 <img
                   className="w-[24px] md:w-[48px]"
-                  src="./Images/about/home-wifi.png"
+                  src="./Images/logos/home-wifi.png"
                   alt=""
                 />
                 <p>محیطی دلنشین و آرام</p>
@@ -128,7 +128,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-2l">
                 <img
                   className="w-[24px] md:w-[48px]"
-                  src="./Images/about/menu-board.png"
+                  src="./Images/logos/menu-board.png"
                   alt=""
                 />
                 <p>منوی متنوع</p>
@@ -178,7 +178,7 @@ export default function Home() {
                             setIsShowImage(true);
                             setSrcImage(branch.img);
                           }}
-                          src="./Images/logoImage.png"
+                          src="./Images/logos/logoImage.png"
                           className={`w-[32px] h-[32px] absolute z-50 ${
                             branch.id == isActiveBranc ? "block" : "hidden"
                           }`}

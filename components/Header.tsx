@@ -78,7 +78,7 @@ const Header = () => {
             width={100}
             height={50}
             alt="logo image"
-            src="/Images/Logo.png"
+            src="/Images/logos/Logo.png"
           />
         </Link>
 
@@ -101,7 +101,7 @@ const Header = () => {
               className={`bg-menueImage bg-center w-[100%] h-[94px] sm:hidden`}
             >
               <img
-                src="./Images/LogoWhite.png"
+                src="./Images/logos/LogoWhite.png"
                 className="w-[63px] h-[30px] mt-[32px] mr-[18px] right-7"
                 alt=""
               />

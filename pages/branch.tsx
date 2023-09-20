@@ -152,7 +152,7 @@ const branch = () => {
     {
       id: 1,
       name: "شعبه اکباتان",
-      img: "./Images/branch/Image1.png",
+      img: "./Images/branch/image1.png",
       location: "شهرک اکباتان، فاز 3، مجتمع تجاری کوروش طبقه سوم",
       phones: ["021-33538745", "021-56752314"],
       hoursWork: [12, 23],
@@ -160,7 +160,7 @@ const branch = () => {
     {
       id: 2,
       name: "شبعه اقدسیه",
-      img: "./Images/branch/Image2.png",
+      img: "./Images/branch/image2.png",
       location: "خیابان اقدسیه، نرسیده به میدان خیام، پلاک 8",
       phones: ["09037556090", "021-2888105"],
       hoursWork: [9, 22],
@@ -168,7 +168,7 @@ const branch = () => {
     {
       id: 3,
       name: "شعبه ونک",
-      img: "./Images/branch/Image3.png",
+      img: "./Images/branch/image3.png",
       location: "میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک 26",
       phones: ["023-4458156", "021-5566215"],
       hoursWork: [13, 24],
@@ -176,7 +176,7 @@ const branch = () => {
     {
       id: 4,
       name: "شعبه چالوس",
-      img: "./Images/branch/Image4.png",
+      img: "./Images/branch/image4.png",
       location:
         "چالوس، خیابان 17 شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی",
       phones: ["021-1005286", "021-56752314"],

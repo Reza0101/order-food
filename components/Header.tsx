@@ -67,7 +67,7 @@ const Header = () => {
     <div className="w-full py-[8px] md:px-[54px] md:py-[16px]">
       <div className="flex items-center justify-between overflow-x-hidden">
         <div
-          className="md:hidden cursor-pointer pr-[20px] text-primary text-[24px]"
+          className="sm:hidden cursor-pointer pr-[20px] text-primary text-[24px]"
           onClick={() => setIsShowMenu(true)}
         >
           <BiMenu />

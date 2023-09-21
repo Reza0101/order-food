@@ -1,5 +1,6 @@
 import { AiTwotoneHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
+import Image from "next/image";
 
 const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
   const discountedAmount = score && (score * price) / 100;
@@ -13,10 +14,18 @@ const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
 
   return (
     <div className="w-[180px] bg-white h-[231px] md:w-[230px] md:h-[350px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
-      <img
+      <Image
         src={img}
-        className="h-[109px] bg-cover bg-center md:h-[200px] lg:h-[256px] w-full rounded-t-4 md:rounded-t-8"
+        className="h-[109px] opacity-0 transition-opacity bg-cover bg-center md:h-[200px] lg:h-[256px] w-full rounded-t-4 md:rounded-t-8"
         alt=""
+        onLoadingComplete={(image) => {
+          image.classList.remove('opacity-0')
+        }}
+        height={100}
+        width={200}
+        style={{
+          width: '100%'
+        }}
       />
       <p className="text-[12px] text-center py-2 font-[400] md:text-[20px]">
         {name}

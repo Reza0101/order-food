@@ -31,7 +31,7 @@ const Header = () => {
     {
       id: 3,
       text: "منو",
-      route: '/',
+      route: '/menu',
       icon: <MdOutlineMenuBook className="text-[18px]" />,
     },
     {
@@ -75,6 +75,7 @@ const Header = () => {
         <div className={`${isShowMenu ? "hidden" : "flex"} sm:hidden`}></div>
         <Link href="/">
           <Image
+            
             width={100}
             height={50}
             alt="logo image"

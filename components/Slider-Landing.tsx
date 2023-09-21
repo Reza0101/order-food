@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-export default function sliderNavbar() {
+export default function SliderNavbar() {
   const sliderItems = [
     {
       id: 1,

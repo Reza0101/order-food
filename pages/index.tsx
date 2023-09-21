@@ -21,26 +21,26 @@ export default function Home() {
   const branchs = [
     {
       id: 1,
-      img: "./Images/branch/image1.png",
+      img: "./Images/branch/ekbatan.png",
       nameBrach: "شعبه اکباتان",
       location: "شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم",
     },
     {
       id: 2,
-      img: "./Images/branch/image2.png",
+      img: "./Images/branch/chalos.png",
       nameBrach: "شعبه چالوس",
       location:
         "چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی",
     },
     {
       id: 3,
-      img: "./Images/branch/image3.png",
+      img: "./Images/branch/agdaseie.png",
       nameBrach: "شعبه اقدسیه",
       location: "خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸",
     },
     {
       id: 4,
-      img: "./Images/branch/image4.png",
+      img: "./Images/branch/vanak.png",
       nameBrach: "شعبه ونک",
       location: "میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶",
     },

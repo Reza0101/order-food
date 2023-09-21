@@ -25,7 +25,7 @@ const branch = () => {
   const specialOffer = [
     {
       id: 1,
-      img: "./Images/dolme.png",
+      img: "/Images/dolme.png",
       name: "دلمه برگ کلم",
       price: 220000,
       score: 8,
@@ -35,7 +35,7 @@ const branch = () => {
     },
     {
       id: 2,
-      img: "./Images/bademgan.png",
+      img: "/Images/bademgan.png",
       name: "بادمجان شکم پر",
       price: 150000,
       score: 18,
@@ -45,7 +45,7 @@ const branch = () => {
     },
     {
       id: 3,
-      img: "./Images/kazone.png",
+      img: "/Images/kazone.png",
       name: "کالزونه اسفناج",
       price: 190000,
       score: 17,
@@ -55,7 +55,7 @@ const branch = () => {
     },
     {
       id: 4,
-      img: "./Images/pizza.png",
+      img: "/Images/pizza.png",
       name: "پیتزا قارچ",
       price: 215000,
       score: 25,
@@ -67,7 +67,7 @@ const branch = () => {
   const popularFood = [
     {
       id: 1,
-      img: "./Images/dolme.png",
+      img: "/Images/dolme.png",
       name: "پنینی اسفناج",
       price: 210000,
       score: 15,
@@ -77,7 +77,7 @@ const branch = () => {
     },
     {
       id: 1,
-      img: "./Images/dolme.png",
+      img: "/Images/dolme.png",
       name: "پیتزا بیرونی",
       price: 100000,
       votes: 51,
@@ -86,7 +86,7 @@ const branch = () => {
     },
     {
       id: 1,
-      img: "./Images/dolme.png",
+      img: "/Images/dolme.png",
       name: "راتاتویی",
       price: 180000,
       score: 45,
@@ -96,7 +96,7 @@ const branch = () => {
     },
     {
       id: 1,
-      img: "./Images/dolme.png",
+      img: "/Images/dolme.png",
       name: "بورانی بادمجان",
       price: 170000,
       score: 22,
@@ -108,7 +108,7 @@ const branch = () => {
   const noneIranianFood = [
     {
       id: 1,
-      img: "./Images/soshi.png",
+      img: "/Images/soshi.png",
       name: "سوشی",
       price: 85000,
       score: 15,
@@ -118,7 +118,7 @@ const branch = () => {
     },
     {
       id: 2,
-      img: "./Images/ratatoi.png",
+      img: "/Images/ratatoi.png",
       name: "راتاتویی",
       price: 95000,
       score: 15,
@@ -128,7 +128,7 @@ const branch = () => {
     },
     {
       id: 3,
-      img: "./Images/pakora.png",
+      img: "/Images/pakora.png",
       name: "پاکورا سبزیجات",
       price: 105000,
       score: 15,
@@ -138,7 +138,7 @@ const branch = () => {
     },
     {
       id: 4,
-      img: "./Images/lazania.png",
+      img: "/Images/lazania.png",
       name: "لازانیا",
       price: 150000,
       score: 15,
@@ -152,7 +152,7 @@ const branch = () => {
     {
       id: 1,
       name: "شعبه اکباتان",
-      img: "./Images/branch/image1.png",
+      img: "/Images/branch/ekbatan.png",
       location: "شهرک اکباتان، فاز 3، مجتمع تجاری کوروش طبقه سوم",
       phones: ["021-33538745", "021-56752314"],
       hoursWork: [12, 23],
@@ -160,7 +160,7 @@ const branch = () => {
     {
       id: 2,
       name: "شبعه اقدسیه",
-      img: "./Images/branch/image2.png",
+      img: "/Images/branch/agdaseie.png",
       location: "خیابان اقدسیه، نرسیده به میدان خیام، پلاک 8",
       phones: ["09037556090", "021-2888105"],
       hoursWork: [9, 22],
@@ -168,7 +168,7 @@ const branch = () => {
     {
       id: 3,
       name: "شعبه ونک",
-      img: "./Images/branch/image3.png",
+      img: "/Images/branch/vanak.png",
       location: "میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک 26",
       phones: ["023-4458156", "021-5566215"],
       hoursWork: [13, 24],
@@ -176,7 +176,7 @@ const branch = () => {
     {
       id: 4,
       name: "شعبه چالوس",
-      img: "./Images/branch/image4.png",
+      img: "/Images/branch/chalos.png",
       location:
         "چالوس، خیابان 17 شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی",
       phones: ["021-1005286", "021-56752314"],
@@ -188,7 +188,7 @@ const branch = () => {
     {
       id: 1,
       name: "سردار وظیفه",
-      img: "./Images/user1.png",
+      img: "/Images/user1.png",
       comment:
         "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
       date: ["15", "آبان", "1401"],
@@ -197,7 +197,7 @@ const branch = () => {
     {
       id: 2,
       name: "آرزو محمد علیزاده",
-      img: "./Images/user2.png",
+      img: "/Images/user2.png",
       comment:
         "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
       date: ["23", "اسفند", "1402"],
@@ -206,7 +206,7 @@ const branch = () => {
     {
       id: 3,
       name: "مهدی رضایی",
-      img: "./Images/user3.png",
+      img: "/Images/user3.png",
       comment:
         "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
       date: ["15", "بهمن", "1402"],
@@ -215,7 +215,7 @@ const branch = () => {
     {
       id: 4,
       name: "رضا احمدی",
-      img: "./Images/user1.png",
+      img: "/Images/user1.png",
       comment:
         "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
       date: ["1", "مهر", "1400"],
@@ -224,7 +224,7 @@ const branch = () => {
     {
       id: 5,
       name: "آرزو محمد علیزاده",
-      img: "./Images/user2.png",
+      img: "/Images/user2.png",
       comment:
         "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
       date: ["23", "اسفند", "1402"],

@@ -3,6 +3,7 @@ import SliderLanding from "./../components/Slider-Landing";
 import { useState } from "react";
 import SearchBox from "@/components/SearchBox";
 import { IoIosArrowBack } from "react-icons/io";
+import BoxFoodMenu from "@/components/Box-food-menu";
 
 const menu = () => {
   const [filterFoodList, setFilterFoodList] = useState("غذای اصلی");
@@ -15,6 +16,8 @@ const menu = () => {
     "غذا های غیر ایرانی",
     "غذا های ایرانی",
   ];
+
+
 
   return (
     <>
@@ -43,10 +46,10 @@ const menu = () => {
             ))}
           </div>
           <div className="md:hidden mx-auto">
-
-          <SearchBox />
+            <SearchBox />
           </div>
         </div>
+
       </Layout>
     </>
   );

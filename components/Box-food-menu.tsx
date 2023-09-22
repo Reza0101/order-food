@@ -12,7 +12,7 @@ const BoxFoodMenu = ({ img, name, price, compounds, discount, star }: any) => {
 
   return (
     <div className="min-w-[320px] flex items-center border rounded-4 border-gray-4 md:rounded-8">
-      <div className="w-[92px] sm:w-[170px] rounded-r-4 md:rounded-r-8 h-[100px] md:w-[132px] md:h-[120px] lg:w-[169px] lg:h-[158px] overflow-hidden">
+      <div className="w-[120px] sm:w-[170px] rounded-r-4 md:rounded-r-8 h-[100px] md:w-[132px] md:h-[120px] lg:w-[169px] lg:h-[158px] overflow-hidden">
         <Image
           className="opacity-0"
           style={{ width: "100%", height: "100%" }}

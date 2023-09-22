@@ -126,13 +126,87 @@ const menu = () => {
     },
   ];
 
+  const nonIranianFood = [
+    {
+      id: 1,
+      img: "/Images/non-iranian-food/pastasabzigat.png",
+      name: "پاستا سبزیجات",
+      price: 175000,
+      discount: 20,
+      star: 5,
+      compounds: "پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده",
+    },
+    {
+      id: 2,
+      img: "/Images/non-iranian-food/pastabelonez.png",
+      name: "پاستا بلونز",
+      price: 170000,
+      discount: 17,
+      star: 4,
+      compounds: "اسپاگتی، گوشت چرخ کرده، هویج، ساقه کرفس، گوجه فرنگی، سیر، پیاز، پنیر پارمزان، روغن زیتون",
+    },
+    {
+      id: 3,
+      img: "/Images/non-iranian-food/ratatoi.png",
+      name: "راتاتویی",
+      price: 180000,
+      discount: 35,
+      star: 4,
+      compounds: "بادمجان، گوجه فرنگی، کدو سبز، پیاز، رب گوجه فرنگی، روغن زیتون، پنیر پارمزان",
+    },
+    {
+      id: 4,
+      img: "/Images/non-iranian-food/lazania.png",
+      name: "لازانیا",
+      price: 150000,
+      star: 5,
+      compounds: "لازانیا، قارچ، ریحان تازه، جعفری تازه، گوجه فرنگی، پنیر پیتزا، بادمجان",
+    },
+    {
+      id: 5,
+      img: "/Images/non-iranian-food/soshi.png",
+      name: "سوشی",
+      price: 100000,
+      discount: 15,
+      star: 4,
+      compounds: "جلبک دریایی/ نوری، برنج کته، سرکه سفید (یا سرکه برنج)، شکر، نمک دریا",
+    },
+    {
+      id: 6,
+      img: "/Images/non-iranian-food/pakorasabzigat.png",
+      name: "پاکورا سبزیجات",
+      price: 125000,
+      discount: 8,
+      star: 4,
+      compounds: "گرام ماسالا، پودر کاری، سیر له شده، ،گشنیز خرد شده",
+    },
+    {
+      id: 7,
+      img: "/Images/non-iranian-food/kalozeesfenag.png",
+      name: "کالوزه اسفناج",
+      price: 19000,
+      discount: 17,
+      star: 5,
+      compounds: "اسفناج، قارچ، پنیر موزارلا یا پنیر پیتزا، پنیر ریکوتا یا پنیر خامه ای، پیاز، سیر، روغن زیتون",
+    },
+    {
+      id: 8,
+      img: "/Images/non-iranian-food/palakpanir.png",
+      name: "پالاک پنیر",
+      price: 200000,
+      discount: 15,
+      star: 4,
+      compounds: "پنیر، اسفناج، گوجه، پیاز، سیر ",
+    },
+  ]
+
   return (
     <>
       <Layout>
         <SliderLanding />
         <div className="px-[20px] md:px-[60px] lg:px-[90px] py-2 flex items-center gap-3 bg-gray-3">
           {foodListName.map((item) => (
-            <p
+            <p key={crypto.randomUUID()}
               className={`${
                 filterFoodList === item &&
                 "text-primary border-b font border-primary"
@@ -146,17 +220,17 @@ const menu = () => {
         <div className="mb-3 mx-[20px] md:px-[60px] mt-2 xl:px-[90px] flex items-start md:items-center justify-between flex-col md:flex-row">
           <div className="flex items-center gap-1 md:gap-4 flex-wrap mt-2">
             {typesFood.map((item) => (
-              <div className="flex items-center bg-gray-3 rounded-8 p-1">
+              <div key={crypto.randomUUID()} className="flex items-center bg-gray-3 rounded-8 p-1">
                 <p className="w-max text-[10px] md:text-[16px]">{item}</p>
                 <IoIosArrowBack />
               </div>
             ))}
           </div>
-          <div className="md:hidden mx-auto">
+          <div className="md:hidden mx-auto w-full">
             <SearchBox />
           </div>
         </div>
-        <div className="flex justify-end -mb-10 md:-mb-12 mx-[20px] md:ml-[60px] lg:ml-[90px]">
+        <div className="flex justify-end -mb-12 md:-mb-12 mx-[20px] md:ml-[60px] lg:ml-[90px]">
           <div className="flex items-center my-3 p-1 md:p-2 gap-1 text-[12px] border border-primary rounded-4 text-primary px-1 w-fit cursor-pointer">
             <AiOutlineShoppingCart className="w-[16px] h-[16px]" />
             تکمیل خرید
@@ -168,7 +242,18 @@ const menu = () => {
           </p>
           <div className="grid grid-cols-1 grid-rows-1 md:grid-rows-2 md:grid-cols-2 gap-3">
             {iranianFood.map((item) => (
-              <BoxFoodMenu {...item} />
+              <BoxFoodMenu key={item.id} {...item} />
+            ))}
+          </div>
+        </div>
+
+        <div className="px-[20px] md:px-[60px] lg:px-[90px]">
+          <p className="text-[16px] my-2 md:text-[20px] lg:text-[24px] font-[700]">
+            غذا های غیر ایرانی
+          </p>
+          <div className="grid grid-cols-1 grid-rows-1 md:grid-rows-2 md:grid-cols-2 gap-3">
+            {nonIranianFood.map((item) => (
+              <BoxFoodMenu key={item.id} {...item} />
             ))}
           </div>
         </div>

@@ -1,6 +1,16 @@
 import Image from "next/image";
+import { useEffect } from "react";
 
-const BoxFoodMenu = ({ img, name, price, compounds, discount, star }: any) => {
+const BoxFoodMenu = ({
+  img,
+  name,
+  price,
+  compounds,
+  discount,
+  star,
+  setShow,
+  setData,
+}: any) => {
   const priceDiscount = discount && price - (price * discount) / 100;
   const imageStar = [
     "./Images/star/1star.png",
@@ -9,12 +19,20 @@ const BoxFoodMenu = ({ img, name, price, compounds, discount, star }: any) => {
     "./Images/star/4star.png",
     "./Images/star/5star.png",
   ];
+  7;
 
+  
   return (
     <div className="min-w-[320px] flex items-center border rounded-4 border-gray-4 md:rounded-8">
-      <div className="w-[120px] sm:w-[170px] rounded-r-4 md:rounded-r-8 h-[100px] md:w-[132px] md:h-[120px] lg:w-[169px] lg:h-[158px] overflow-hidden">
+      <div
+        onClick={() => {
+          setShow(true)
+          setData({name, img, star, compounds})
+        }}
+        className="w-[120px] sm:w-[170px] rounded-r-4 md:rounded-r-8 h-[100px] md:w-[132px] md:h-[120px] lg:w-[169px] lg:h-[158px] overflow-hidden"
+      >
         <Image
-          className="opacity-0"
+          className="opacity-0 cursor-pointer"
           style={{ width: "100%", height: "100%" }}
           width={0}
           height={0}
@@ -22,7 +40,7 @@ const BoxFoodMenu = ({ img, name, price, compounds, discount, star }: any) => {
           src={img}
           alt="imgFood"
           onLoadingComplete={(image) => {
-            image.classList.remove('opacity-0')
+            image.classList.remove("opacity-0");
           }}
         />
       </div>

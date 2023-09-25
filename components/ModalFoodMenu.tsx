@@ -1,12 +1,13 @@
-const ModalMenuFood = ({ setShow, data }: any) => {
+import Image from "next/image";
 
-    const imageStar = [
-        "./Images/star/1star.png",
-        "./Images/star/2star.png",
-        "./Images/star/3star.png",
-        "./Images/star/4star.png",
-        "./Images/star/5star.png",
-      ];
+const ModalMenuFood = ({ setShow, data }: any) => {
+  const imageStar = [
+    "./Images/star/1star.png",
+    "./Images/star/2star.png",
+    "./Images/star/3star.png",
+    "./Images/star/4star.png",
+    "./Images/star/5star.png",
+  ];
 
   return (
     <div
@@ -22,14 +23,29 @@ const ModalMenuFood = ({ setShow, data }: any) => {
         <div className="h-[50px] w-full bg-gray-3 rounded-t-8 flex items-center justify-center">
           <p className="text-[20px] font-bold">اطلاعات محصول</p>
         </div>
-        <img src={data.img} className="h-fit w-full" alt="" />
+        <Image
+          onLoadingComplete={(image) => {
+            image.classList.remove("opacity-0");
+          }}
+          src={data.img}
+          width={0}
+          style={{ width: "100%", height: "100%" }}
+        sizes="100vh"
+          height={0}
+          className="h-fit opacity-0 transition-opacity w-full"
+          alt=""
+        />
         <div className="flex items-center px-[15px] justify-between w-full rounded-b-4 md:rounded-b-8 h-fit bg-white">
           <div className="flex flex-col gap-1">
             <p className="text-[14px] md:text-[16px]">{data.name}</p>
             <p className="text-[10px] md:text-[14px] pb-1">{data.compounds}</p>
           </div>
           <div>
-            <img className="h-[12px] md:h-[16px]" src={imageStar[data.star - 1]} alt="" />
+            <img
+              className="h-[12px] md:h-[16px]"
+              src={imageStar[data.star - 1]}
+              alt=""
+            />
           </div>
         </div>
       </div>

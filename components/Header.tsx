@@ -87,7 +87,7 @@ const Header = () => {
           onClick={() => setIsShowMenu(false)}
           className={`${
             isShowMenu &&
-            "w-[100%] h-[100%] sm:bg-white flex closeMenu sm:static sm:justify-center top-0 left-0 z-40 duration-300"
+            "w-[100%] h-[100%] sm:bg-white flex closeMenu z-50 sm:static sm:justify-center top-0 left-0 z-40 duration-300"
           } duration-300 transition`}
         >
           <div
@@ -140,7 +140,7 @@ const Header = () => {
           </Link>
           <Link
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
-            href="/"
+            href="/cart"
           >
             <HiOutlineShoppingCart className=" hover:text-white duration-300" />
           </Link>

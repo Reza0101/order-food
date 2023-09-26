@@ -3,8 +3,11 @@ import { PiWarningOctagonBold } from "react-icons/pi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiLocationOn } from "react-icons/ci";
 import BoxAddress from "./Box-Address";
+import { useState } from "react";
 
 const Information = ({ setPage }: any) => {
+  const [sendFood, setSendFood] = useState("delivery");
+
   return (
     <div dir="rtl" className="px-[20px]">
       <div className="gap-3 flex flex-col md:flex-row justify-between items-start rounded-4 md:rounded-8 my-3 w-full mx-auto">
@@ -20,7 +23,7 @@ const Information = ({ setPage }: any) => {
             </div>
             <p className="w-full h-[1px] bg-gray-4 sm:hidden"></p>
             <div className="flex items-center gap-1">
-              <input name="fff" className="checkbox border" type="checkbox" />
+              <input onChange={() => setSendFood("delivery")} name="fff" className="checkbox border" type="checkbox" />
               <div className="text-[12px] md:text-[14px]" dir="rtl">
                 <p>ارسال توسط پیک</p>
                 <p className="hidden sm:block text-[10px]">
@@ -34,7 +37,11 @@ const Information = ({ setPage }: any) => {
               />
             </div>
             <div className="flex items-center gap-1">
-              <input name="fff" className="checkbox" type="checkbox" />
+              <input
+                onChange={() => setSendFood("in-person")}
+                className="checkbox"
+                type="checkbox"
+              />
               <div className="text-[12px] md:text-[14px]" dir="rtl">
                 <p>تحویل حضوری</p>
                 <p className="hidden sm:block text-[10px]">
@@ -45,40 +52,65 @@ const Information = ({ setPage }: any) => {
             </div>
           </div>
           {/* Title address */}
-          <div className="w-full border border-t-gray-4 rounded-8 my-2 p-2">
-            <div className="flex py-2 items-center justify-between">
-              <div className="flex items-center">
-                <CiLocationOn className="text-[24px]" />
-                <p>آدرس ها</p>
+          {sendFood === "in-person" ? (
+            <div className="w-full border border-t-gray-4 rounded-8 my-2 p-2">
+              <div className="flex py-2 items-center justify-between">
+                <div className="flex items-center">
+                  <CiLocationOn className="text-[24px]" />
+                  <p>آدرس ها</p>
+                </div>
+                <div className="flex items-center gap-1 cursor-pointer text-primary">
+                  <p>افزدون آدرس</p>
+                  <span className="border border-primary px-2 rounded-full w-min">
+                    +
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-1 cursor-pointer text-primary">
-                <p>افزدون آدرس</p>
-                <span className="border border-primary px-2 rounded-full w-min">
-                  +
-                </span>
+              <hr />
+              {/* Empty location */}
+              <div className="flex w-full h-[350px] items-center justify-center">
+                <img
+                  className="w-[200px] absolute h-[190px] mx-auto"
+                  src="./Images/empty-page.png"
+                  alt=""
+                />
+                <div className="flex absolute z-40 flex-col gap-3 items-center">
+                  <p>شما در حال حاضر هیچ آدرسی ثبت نکرده اید!</p>
+                </div>
+              </div>
+              {/* existence of address */}
+              <div className="w-full flex flex-wrap justify-around gap-2">
+                <BoxAddress />
+                <BoxAddress />
+                <BoxAddress />
+                <BoxAddress />
+                <BoxAddress />
               </div>
             </div>
-            <hr />
-            {/* Empty location */}
-            <div className="flex w-full h-[350px] items-center justify-center">
-              <img
-                className="w-[200px] absolute h-[190px] mx-auto"
-                src="./Images/empty-page.png"
-                alt=""
-              />
-              <div className="flex absolute z-40 flex-col gap-3 items-center">
-                <p>شما در حال حاضر هیچ آدرسی ثبت نکرده اید!</p>
+          ) : (
+            <div className="border my-3 border-gray-4 p-4 rounded-8 flex items-start justify-between">
+              <div>
+                <div className="flex items-center gap-1">
+                  <CiLocationOn />
+                  <p className="text-[14px] my-3 md:text-[16px]">
+                    آدرس شعبه اکباتان
+                  </p>
+                </div>
+                <div className="text-[10px] md:text-[12px] flex flex-col gap-1">
+                  <p>
+                    اکباتان، خیابان ریاحی، کوچه سیزدهم، ساختمان آیسا، طبقه همکف
+                  </p>
+                  <p>شماره تماس ۱: ۱۲۵۴ ۵۴۸۹ -۰۲۱</p>
+                  <p>شماره تماس ۲: ۱۲۵۵ ۵۴۸۹ -۰۲۱ </p>
+                  <p>ساعت کاری: همه‌روزه از ساعت ۱۲ تا ۲۳ بجز روزهای تعطیل</p>
+                </div>
+                <div className="hidden mx-auto my-5 sm:flex items-center justify-center border rounded-4 w-fit px-2 py-[3px] border-[#717171]">
+                  مشاهده در نقشه
+                </div>
               </div>
+              <img className="w-1/2 hidden sm:block" src="./Images/map.png" alt="" />
             </div>
-            {/* existence of address */}
-            <div className="w-full flex flex-wrap justify-around gap-2">
-              <BoxAddress />
-              <BoxAddress />
-              <BoxAddress />
-              <BoxAddress />
-              <BoxAddress />
-            </div>
-          </div>
+          )}
           {/* description */}
           <div className="rounded-8 flex gap-1 items-start border border-gray-4 p-3 my-4">
             <img
@@ -94,6 +126,7 @@ const Information = ({ setPage }: any) => {
             ></textarea>
           </div>
         </div>
+        {/* item products */}
         <div className="border rounded-8 border-gray-4 p-2 w-full md:w-[40%]">
           <div className="flex my-1 items-center w-full justify-between">
             <p className="text-[14px] md:text-[16px]">سبد خرید (4)</p>

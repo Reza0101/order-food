@@ -9,14 +9,18 @@ import Information from "@/components/cart/Information";
 import Payment from "@/components/cart/Payment";
 const cart = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [completed, setCompleted] = useState(false)
+  const [completed, setCompleted] = useState(false);
   const stepper = [
     { id: 1, text: "سبد خرید", icon: <AiOutlineShoppingCart /> },
     { id: 2, text: "تکمیل اطلاعات", icon: <TiTick /> },
     { id: 3, text: "پرداخت", icon: <MdPayment /> },
   ];
 
-  const stepperPage = [<Cart setPage={setCurrentPage} />, <Information setPage={setCurrentPage} />, <Payment setCompleted={setCompleted} setpate={setCurrentPage} />];
+  const stepperPage = [
+    <Cart setPage={setCurrentPage} />,
+    <Information setPage={setCurrentPage} />,
+    <Payment setCompleted={setCompleted} setpate={setCurrentPage} />,
+  ];
 
   return (
     <Layout>
@@ -24,8 +28,9 @@ const cart = () => {
         {stepper.map((item, index) => (
           <div
             className={`${
-              index + 1 <= currentPage && "text-primary border-primary"
-            } flex items-center text-[10px] md:text-[14px] lg:text-[16px]`}
+              index + 1 <= currentPage &&
+              "text-primary cursor-pointer border-primary"
+            } flex items-center text-[15px] md:text-[17px] lg:text-[20px]`}
           >
             <div className="flex items-center gap-1">
               <p
@@ -47,8 +52,9 @@ const cart = () => {
           </div>
         ))}
       </div>
-
-      {stepperPage[currentPage - 1]}
+      {completed ? <>
+        <img src="./Images/Successful payment.png" className="w-full mx-auto h-[500px] md:h-[600px]" alt="" />
+      </> : <>{stepperPage[currentPage - 1]}</>}
     </Layout>
   );
 };

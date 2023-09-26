@@ -11,10 +11,10 @@ const BoxAddress = ({ location, name, phone }: any) => {
         <AiOutlineEdit className="cursor-pointer text-[16px] sm:text-[18px] md:text-[24px] md:mr-2" />
         <RiDeleteBin6Line className="cursor-pointer text-[16px] sm:text-[18px] md:text-[24px] md:mr-2" />
       </div>
-      <div className="w-full flex justify-around my-2">
+      <div className="w-full flex justify-around my-2 text-[12px] md:text-[16px]">
         <p>محل کار</p>
         <p>سردار وظیفه</p>
-        <p>۰۹۱۴ ۸۶۴ ۳۳۵۰</p>
+        <p>09037246099</p>
       </div>
     </div>
   );

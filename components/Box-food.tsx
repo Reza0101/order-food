@@ -13,7 +13,7 @@ const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
   ];
 
   return (
-    <div className="w-[180px] bg-white h-[231px] md:w-[230px] md:h-[350px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
+    <div className="w-[180px] bg-white h-[231px] md:w-[220px] md:h-[350px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
       <Image
         src={img}
         className="h-[109px] opacity-0 transition-opacity bg-cover bg-center md:h-[200px] lg:h-[256px] w-full rounded-t-4 md:rounded-t-8"

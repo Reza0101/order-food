@@ -20,7 +20,7 @@ export default function SliderBox({ data }: any) {
           600: {
             slidesPerView: 3,
           },
-          800: {
+          830: {
             slidesPerView: 3
           },
           1024: {

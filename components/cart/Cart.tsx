@@ -23,11 +23,14 @@ const Cart = ({ setPage }: any) => {
         </div>
       </div>
       <div className="border-gray-4 gap-3 flex flex-col md:flex-row justify-between items-start rounded-4 md:rounded-8 my-3 w-full mx-auto border md:border-none">
-        <div dir="ltr" className="md:border rounded-8 h-[200px] md:h-[558px] overflow-scroll border-gray-4 p-2 w-full md:w-[60%]">
-            <BoxCart />
-            <BoxCart />
-            <BoxCart />
-            <BoxCart />
+        <div
+          dir="ltr"
+          className="md:border rounded-8 h-[200px] md:h-[558px] overflow-scroll border-gray-4 p-2 w-full md:w-[60%]"
+        >
+          <BoxCart />
+          <BoxCart />
+          <BoxCart />
+          <BoxCart />
         </div>
         <div className="md:border rounded-8 border-gray-4 p-2 w-full md:w-[40%]">
           <div className="flex my-1 items-center w-full justify-between">
@@ -50,11 +53,19 @@ const Cart = ({ setPage }: any) => {
           </div>
           <div className="flex items-center text-warning gap-2">
             <PiWarningOctagonBold className="text-[24px]" />
-            <p className="text-[10px]">هزینه ارسال در ادامه بر اساس آدرس، زمان و نحوه ارسال انتخابی شما محاسبه و به این مبلغ اضافه خواهد شد.</p>
+            <p className="text-[10px]">
+              هزینه ارسال در ادامه بر اساس آدرس، زمان و نحوه ارسال انتخابی شما
+              محاسبه و به این مبلغ اضافه خواهد شد.
+            </p>
           </div>
           <hr />
           <div className="flex text-[16px] items-center justify-center gap-2 bg-primary text-white rounded-4 w-full py-1 my-2 cursor-pointer">
-            <p className="font-[400]">تکمیل اطلاعات</p>
+            <p
+              onClick={() => setPage((prev : number) => prev + 1)}
+              className="font-[400]"
+            >
+              تکمیل اطلاعات
+            </p>
           </div>
         </div>
       </div>

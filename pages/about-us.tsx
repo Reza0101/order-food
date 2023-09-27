@@ -33,7 +33,7 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-around bg-gray-3 w-full py-2 md:py-6 mt-4">
+      <div className="flex items-center justify-around bg-gray-3 w-full py-2 md:py-6 mt-4 px-5">
         <div className="flex flex-col items-center gap-3">
           <img src="./Images/logos/userB.png" className="w-[16px] sm:w-[20px] md:w-[25px] lg:w-[40px]" alt="" />
           <p className="text-[10px] md:text-[14px] lg:text-[18px] font-[400]">پرسنلی مجرب و حرفه ای</p>

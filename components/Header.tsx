@@ -44,7 +44,7 @@ const Header = () => {
       id: 4,
       isActive: true,
       text: "اعطای نمایندگی",
-      route: '/',
+      route: '/franchise',
       icon: <MdOutlineRealEstateAgent className="text-[18px]" />,
     },
     {

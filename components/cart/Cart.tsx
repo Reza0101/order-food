@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PiWarningOctagonBold } from "react-icons/pi";
 import BoxCart from "./Box-Food-Cart";
+import { formatPrice } from "@/utils/helper";
 const Cart = ({ setPage }: any) => {
   return (
     <div className="px-[20px]">
@@ -41,7 +42,7 @@ const Cart = ({ setPage }: any) => {
           <div className="flex py-1 my-1 text-[14px] items-center justify-between w-full">
             <p>تخفیف محصولات</p>
             <p>
-              <span>63000</span> تومان
+              <span>{formatPrice('63000')}</span> تومان
             </p>
           </div>
           <hr />

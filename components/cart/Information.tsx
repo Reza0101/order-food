@@ -4,6 +4,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiLocationOn } from "react-icons/ci";
 import BoxAddress from "./Box-Address";
 import { useState } from "react";
+import { formatPrice } from "@/utils/helper";
 
 const Information = ({ setPage }: any) => {
   const [sendFood, setSendFood] = useState("delivery");
@@ -23,7 +24,12 @@ const Information = ({ setPage }: any) => {
             </div>
             <p className="w-full h-[1px] bg-gray-4 sm:hidden"></p>
             <div className="flex items-center gap-1">
-              <input onChange={() => setSendFood("delivery")} name="fff" className="checkbox border" type="checkbox" />
+              <input
+                checked={sendFood === "delivery" ? true : false}
+                onChange={() => setSendFood("delivery")}
+                className="checkbox"
+                type="checkbox"
+              />
               <div className="text-[12px] md:text-[14px]" dir="rtl">
                 <p>ارسال توسط پیک</p>
                 <p className="hidden sm:block text-[10px]">
@@ -38,6 +44,7 @@ const Information = ({ setPage }: any) => {
             </div>
             <div className="flex items-center gap-1">
               <input
+                checked={sendFood === "in-person" ? true : false}
                 onChange={() => setSendFood("in-person")}
                 className="checkbox"
                 type="checkbox"
@@ -108,7 +115,11 @@ const Information = ({ setPage }: any) => {
                   مشاهده در نقشه
                 </div>
               </div>
-              <img className="w-1/2 hidden sm:block" src="./Images/map.png" alt="" />
+              <img
+                className="w-1/2 hidden sm:block"
+                src="./Images/map.png"
+                alt=""
+              />
             </div>
           )}
           {/* description */}
@@ -198,7 +209,7 @@ const Information = ({ setPage }: any) => {
           <div className="flex py-1 my-1 text-[14px] items-center justify-between w-full">
             <p>تخفیف محصولات</p>
             <p>
-              <span>63000</span> تومان
+              <span>{formatPrice("63000")}</span> تومان
             </p>
           </div>
           <hr />

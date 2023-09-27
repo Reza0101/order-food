@@ -1,3 +1,4 @@
+import { formatPrice } from "@/utils/helper";
 import Image from "next/image";
 
 const BoxFoodMenu = ({
@@ -49,7 +50,9 @@ const BoxFoodMenu = ({
           {discount && (
             <div className="flex items-center gap-1">
               <p className="line-through text-gray-5 text-[10px] md:text-[16px]">
-                {price}
+                {
+                  formatPrice(price)
+                }
               </p>
               <p className="text-[10px] p-1 md:text-[12px] text-error bg-gray-3 rounded-8">
                 {discount}%
@@ -62,7 +65,7 @@ const BoxFoodMenu = ({
             {compounds}
           </p>
           <div className="text-[10px] flex gap-1 items-center md:text-[18px]">
-            {discount ? <span>{priceDiscount}</span> : <span>{price}</span>}
+            {discount ? <span>{formatPrice(priceDiscount)}</span> : <span>{formatPrice(price)}</span>}
             تومان
           </div>
         </div>

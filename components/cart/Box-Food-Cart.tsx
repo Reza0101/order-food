@@ -1,3 +1,4 @@
+import { formatPrice } from "@/utils/helper";
 import { RiDeleteBinLine } from "react-icons/ri";
 const BoxCart = () => {
   const imageStar = [
@@ -31,21 +32,24 @@ const BoxCart = () => {
               پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده
             </p>
             <div className="items-center gap-1 flex">
-              <p className="line-through text-gray-4">175000</p>
+              <p className="line-through text-gray-4">{formatPrice('175000')}</p>
               <p className="text-error rounded-16 p-1 bg-[#FFF2F2]">20%</p>
             </div>
           </div>
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-2">
-            
-              <img src={imageStar[3]} className="hidden h-[14px] md:block" alt="" />
+              <img
+                src={imageStar[3]}
+                className="hidden h-[14px] md:block"
+                alt=""
+              />
               <div className="flex w-fit gap-2 text-[12px] bg-tint-1 md:p-1 px-1 rounded-4 items-center justify-between">
                 <span className="cursor-pointer text-[18px]">+</span>
                 <span>2</span>
                 <span className="cursor-pointer text-[18px]">-</span>
               </div>
             </div>
-            <p>252000 تومان</p>
+            <p>{formatPrice('255000')} تومان</p>
           </div>
         </div>
       </div>

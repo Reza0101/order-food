@@ -3,7 +3,7 @@ const ModalImage = ({ img, setShow }: imagesModal) => {
   return (
     <div
       onClick={() => setShow(false)}
-      className="flex items-center top-0 bottom-0 fixed z-50 w-[100%]  justify-center"
+      className="flex overflow-hidden items-center top-0 bottom-0 fixed z-50 w-[100%]  justify-center"
     >
       <div className="z-50 fixed top-0 bg-black opacity-[0.8] w-[100%] h-[100%]"></div>
 

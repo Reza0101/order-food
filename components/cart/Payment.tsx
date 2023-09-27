@@ -4,6 +4,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiLocationOn } from "react-icons/ci";
 import BoxAddress from "./Box-Address";
 import { useState } from "react";
+import { formatPrice } from "@/utils/helper";
 
 const Payment = ({ setPage, setCompleted }: any) => {
   const [payment, setPayment] = useState("internet");
@@ -52,9 +53,9 @@ const Payment = ({ setPage, setCompleted }: any) => {
             <p className="w-full h-[1px] bg-gray-4 sm:hidden"></p>
             <div className="flex items-center gap-1">
               <input
+                checked={payment === "delivery" ? true : false}
                 onChange={() => setPayment("delivery")}
-                name="fff"
-                className="checkbox border"
+                className="checkbox"
                 type="checkbox"
               />
               <div className="text-[12px] md:text-[14px]" dir="rtl">
@@ -71,6 +72,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
             </div>
             <div className="flex items-center gap-1">
               <input
+                checked={payment === "in-person" ? true : false}
                 onChange={() => setPayment("in-person")}
                 className="checkbox"
                 type="checkbox"
@@ -86,7 +88,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
           </div>
 
           {payment === "in-person" ? (
-            <div className="w-full bg-gray-1 border border-t-gray-4 rounded-8 my-2 p-2 flex-col md:flex-row flex items-start md:items-center md:gap-3">
+            <div className="w-full bg-gray-1 border border-t-gray-4 rounded-8 my-4 p-2 flex-col md:flex-row flex items-start md:items-center md:gap-3">
               <div className="w-1/4 gap-1 flex items-center">
                 <PiWarningOctagonBold />
                 <p className="w-max">قابل توجه</p>
@@ -100,26 +102,28 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </p>
             </div>
           ) : (
-            <div className="border my-3 border-gray-4 rounded-8 flex flex-col md:flex-row items-start justify-between p-4">
-              <div className="flex items-center gap-1 dm:w-2/6 md:w-4/12">
-                <img
-                  className="w-[24px]"
-                  src="./Images/logos/card.png"
-                  alt=""
-                />
-                <p className="w-fit">درگاه پرداخت</p>
-              </div>
-              <div className="h-[1px] w-full bg-gray-4 md:hidden my-3"></div>
-              <div className="flex items-center justify-center gap-4 w-full dm:w-4/6 md:w-8/12">
-                {banks.map((item) => (
+            <div className="flex flex-col border my-4 border-gray-4 rounded-8 ">
+              <div className="flex flex-col md:flex-row items-start justify-between p-4">
+                <div className="flex items-center gap-1 dm:w-2/6 md:w-4/12">
                   <img
-                    onClick={() => setBank(item.name)}
-                    src={item.img}
-                    className={`w-[64px] md:w-[80px] cursor-pointer ${
-                      bank === item.name || "grayscale"
-                    }`}
+                    className="w-[24px]"
+                    src="./Images/logos/card.png"
+                    alt=""
                   />
-                ))}
+                  <p className="w-fit">درگاه پرداخت</p>
+                </div>
+                <div className="h-[1px] w-full bg-gray-4 md:hidden my-3"></div>
+                <div className="flex items-center justify-center gap-4 w-full dm:w-4/6 md:w-8/12">
+                  {banks.map((item) => (
+                    <img
+                      onClick={() => setBank(item.name)}
+                      src={item.img}
+                      className={`w-[64px] md:w-[80px] cursor-pointer ${
+                        bank === item.name || "grayscale"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="text-[10px] mx-auto my-2 text-center">
                 <p className="sm:text-[12px] py-1">
@@ -150,7 +154,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </div>
               <div className="text-[10px] sm:text-[12px] md:text-[14px]">
                 <p>پاستا سبزیجات</p>
-                <p>140000 تومان</p>
+                <p>{formatPrice("140000")} تومان</p>
               </div>
             </div>
             <div className="flex p-1 items-center justify-between w-full">
@@ -161,7 +165,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </div>
               <div className="text-[10px] sm:text-[12px] md:text-[14px]">
                 <p>پاستا سبزیجات</p>
-                <p>140000 تومان</p>
+                <p>{formatPrice("140000")} تومان</p>
               </div>
             </div>
             <div className="flex p-1 items-center justify-between w-full">
@@ -172,7 +176,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </div>
               <div className="text-[10px] sm:text-[12px] md:text-[14px]">
                 <p>پاستا سبزیجات</p>
-                <p>140000 تومان</p>
+                <p>{formatPrice("140000")} تومان</p>
               </div>
             </div>
             <div className="flex p-1 items-center justify-between w-full">
@@ -183,7 +187,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </div>
               <div className="text-[10px] sm:text-[12px] md:text-[14px]">
                 <p>پاستا سبزیجات</p>
-                <p>140000 تومان</p>
+                <p>{formatPrice("140000")} تومان</p>
               </div>
             </div>
             <div className="flex p-1 items-center justify-between w-full">
@@ -194,7 +198,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
               </div>
               <div className="text-[10px] sm:text-[12px] md:text-[14px]">
                 <p>پاستا سبزیجات</p>
-                <p>140000 تومان</p>
+                <p>{formatPrice("140000")} تومان</p>
               </div>
             </div>
           </div>
@@ -202,7 +206,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
           <div className="flex py-1 my-1 text-[14px] items-center justify-between w-full">
             <p>تخفیف محصولات</p>
             <p>
-              <span>63000</span> تومان
+              <span>{formatPrice("63000")}</span> تومان
             </p>
           </div>
           <hr />

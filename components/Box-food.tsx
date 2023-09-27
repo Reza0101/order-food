@@ -1,6 +1,7 @@
 import { AiTwotoneHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
+import { formatPrice } from "@/utils/helper";
 
 const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
   const discountedAmount = score && (score * price) / 100;
@@ -13,7 +14,7 @@ const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
   ];
 
   return (
-    <div className="w-[180px] bg-white h-[231px] md:w-[220px] md:h-[350px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
+    <div className="w-[180px] bg-white h-[231px] md:w-[220px] md:h-[360px] lg:w-[288px] lg:h-[433px] rounded-4 md:rounded-8 border border-gray-4">
       <Image
         src={img}
         className="h-[109px] opacity-0 transition-opacity bg-cover bg-center md:h-[200px] lg:h-[256px] w-full rounded-t-4 md:rounded-t-8"
@@ -47,17 +48,17 @@ const BoxFood = ({ img, name, price, star, score, votes, like }: any) => {
               {score}%
             </p>
           )}
-          <p className={`text-gray-5 ${score && "line-through"}`}>{price}</p>
+          <p className={`text-gray-5 ${score && "line-through"}`}>{formatPrice(price)}</p>
         </div>
       </div>
-      <div className="flex my-2 px-[8px] md:px-[16px] items-center justify-between text-[10px] md:text-[16px]">
+      <div className="flex my-1 px-[8px] md:px-[16px] items-center justify-between text-[10px] md:text-[16px]">
         <div className="flex flex-row-reverse items-center gap-1">
           <p className="text-gray-4 text-[10px] hidden md:block">({votes} امتیاز)</p>
           {star}
           <img src={starImageSrc[star - 1]} alt="" />
         </div>
         <p>
-          {discountedAmount}
+          {formatPrice(discountedAmount)}
           تومان
         </p>
       </div>

@@ -26,8 +26,36 @@ const AboutUs = () => {
             شعبات راه اندازی شده و آماده برگزاری جشن‌ها و مراسم‌های بزرگ شما
             خواهند بود . به امید آن روز که همه ایرانیان سالم و سلامت باشند.
           </p>
-          <img className="lg:w-[600px] lg:h-[490px] w-[400px] h-[220px] mx-auto" src="./Images/aboutus1.png" alt="" />
+          <img
+            className="lg:w-[600px] lg:h-[490px] w-[400px] h-[220px] mx-auto"
+            src="./Images/aboutus1.png"
+            alt=""
+          />
         </div>
+      </div>
+      <div className="flex items-center justify-around bg-gray-3 w-full py-2 md:py-6 mt-4">
+        <div className="flex flex-col items-center gap-3">
+          <img src="./Images/logos/userB.png" className="w-[16px] sm:w-[20px] md:w-[25px] lg:w-[40px]" alt="" />
+          <p className="text-[10px] md:text-[14px] lg:text-[18px] font-[400]">پرسنلی مجرب و حرفه ای</p>
+        </div>
+        <div className="w-[1px] h-[40px] md:h-[60px] lg:h-[80px] bg-gray-5"></div>
+        <div className="flex flex-col items-center gap-3">
+          <img src="./Images/logos/diagramB.png" className="w-[16px] sm:w-[20px] md:w-[25px] lg:w-[40px]" alt="" />
+          <p className="text-[10px] md:text-[14px] lg:text-[18px] font-[400]">کیفیت بالای غذا ها</p>
+        </div>
+        <div className="w-[1px] h-[40px] md:h-[60px] lg:h-[80px] bg-gray-5"></div>
+
+        <div className="flex flex-col items-center gap-3">
+          <img src="./Images/logos/home-wifiB.png" className="w-[16px] sm:w-[20px] md:w-[25px] lg:w-[40px]" alt="" />
+          <p className="text-[10px] md:text-[14px] lg:text-[18px] font-[400]">محیطی دلنشین و آرام</p>
+        </div>
+        <div className="w-[1px] h-[40px] md:h-[60px] lg:h-[80px] bg-gray-5"></div>
+
+        <div className="flex flex-col items-center gap-3">
+          <img src="./Images/logos/menu-boardB.png" className="w-[16px] sm:w-[20px] md:w-[25px] lg:w-[40px]" alt="" />
+          <p className="text-[10px] md:text-[14px] lg:text-[18px] font-[400]">منوی متنوع</p>
+        </div>
+        
       </div>
     </Layout>
   );

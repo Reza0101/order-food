@@ -51,7 +51,7 @@ const Header = () => {
       id: 5,
       isActive: true,
       text: "درباره ما",
-      route: '/',
+      route: '/about-us',
       icon: <FiUsers className="text-[18px]" />,
     },
     {

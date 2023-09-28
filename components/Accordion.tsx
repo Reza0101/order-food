@@ -1,21 +1,36 @@
-import {Accordion} from 'react-bootstrap'
+import react, { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
-
-const Accordio = ({
+const AccordionBS = ({
   title,
-  discriptino,
+  caption,
+  id,
 }: {
   title: string;
-  discriptino: string;
+  caption: string;
+  id: string;
 }) => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <Accordion.Item className="bg-none" eventKey="0">
-      <Accordion.Header>
-        <p className="flex justify-between w-full items-center">{title}</p>
-      </Accordion.Header>
-      <Accordion.Body>{discriptino}</Accordion.Body>
-    </Accordion.Item>
+    <div className="p-3 border">
+      <div
+        onClick={() => setOpen((prev) => !prev)}
+        className="flex cursor-pointer py-2 items-center justify-between w-full"
+      >
+        <p className={`${open && 'text-primary font-bold'}`}>{title}</p>
+        <IoIosArrowDown className={`${open && 'rotate-180'} duration-300`} />
+      </div>
+      <div
+        className={`${
+          open
+            ? "max-h-[800px] opacity-1 transition-all duration-1000"
+            : "max-h-0 overflow-hidden opacity-0 duration-700"
+        }`}
+      >
+        {caption}
+      </div>
+    </div>
   );
 };
-export default Accordio;
+export default AccordionBS;

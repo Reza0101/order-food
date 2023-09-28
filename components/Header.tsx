@@ -139,10 +139,10 @@ const Header = () => {
             <BiSearchAlt onClick={() => setIsShowSearchBox(true)} className="hover:text-white duration-300" />
           </Link>
           <Link
-            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
+            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 "
             href="/cart"
           >
-            <HiOutlineShoppingCart className=" hover:text-white duration-300" />
+            <HiOutlineShoppingCart className=" hover:text-white text-primary duration-300" />
           </Link>
           <Link
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"

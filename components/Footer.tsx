@@ -28,7 +28,7 @@ const Footer = () => {
             قوانین ترخینه
           </Link>
           <Link
-            href="/"
+            href="/privacy"
             className="text-[10px] hover:text-primary duration-300 md:text-[14px] block py-1"
           >
             حریم خصوصی

@@ -16,7 +16,7 @@ const Footer = () => {
             دسترسی آسان
           </p>
           <Link
-            href="/"
+            href="/FAQ"
             className="text-[10px] hover:text-primary duration-300 md:text-[14px] block py-1"
           >
             پرسش های متوادل

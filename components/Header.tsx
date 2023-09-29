@@ -58,7 +58,7 @@ const Header = () => {
       id: 6,
       isActive: true,
       text: "تماس باما",
-      route: '/',
+      route: '/contact-us',
       icon: <LuPhoneCall className="text-[18px]" />,
     },
   ];

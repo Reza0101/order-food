@@ -8,7 +8,7 @@ const BoxContact = ({
   name,
   address,
   phone,
-  horsWork,
+  hoursWork,
   setShow,
   showImage,
 }: any) => {
@@ -19,13 +19,13 @@ const BoxContact = ({
       <div className="flex w-[320px] md:w-[700px] md:h-[200px] lg:w-[1000px] lg:h-[280px] flex-col md:flex-row border rounded-4 items-center">
         <div
           onClick={() => setShow(id)}
-          style={{ backgroundImage: `url(./Images/branch/vanak.png)` }}
-          className="w-full relative bg-cover bg-center bg-no-repeat cursor-pointer h-[112px] md:w-[400px] lg:w-[600px] md:h-full rounded-t-4 md:rounded-0 md:rounded-r-4"
+          style={{ backgroundImage: `url(${img})` }}
+          className="w-full relative overflow-hidden  bg-cover bg-clip-content bg-center bg-no-repeat cursor-pointer h-[112px] md:w-[400px] lg:w-[600px] md:h-full rounded-t-4 md:rounded-0 md:rounded-r-4"
         >
           <div
             className={`${
               showImage === id &&
-              "absolute bg-black w-full h-[112px] opacity-[.5] rounded-t-4 md:w-[380px] lg:w-[513px] md:h-full "
+              "absolute bg-black w-full h-[112px] opacity-[.5] rounded-t-4 md:w-[400px] lg:w-[700px] md:h-full "
             }`}
           ></div>
 
@@ -49,7 +49,7 @@ const BoxContact = ({
                   setShowModal(true);
                   setShow(id);
                 }}
-                src={img}
+                src="./Images/logos/logoImage.png"
                 className={`w-[32px] h-[32px] absolute z-50 ${
                   showImage == id ? "block" : "hidden"
                 }`}
@@ -58,7 +58,7 @@ const BoxContact = ({
             </div>
           </div>
         </div>
-        <div className="flex items-center flex-col px-6">
+        <div className="flex items-center flex-col px-6 lg:w-[400px]">
           <p className="text-[12px] font-[400] lg:text-[20px] lg:font-[600] md:text-[18px] py-3">
             {name}
           </p>
@@ -70,9 +70,9 @@ const BoxContact = ({
             </p>
             <p>
               ساعت کاری: همه‌روزه از ساعت
-              <span>{horsWork[0]}</span>
+              <span>{hoursWork[0]}</span>
               الی
-              <span>{horsWork[1]}</span>
+              <span>{hoursWork[1]}</span>
               بجز روز های تعطیل
             </p>
           </div>
@@ -87,7 +87,7 @@ const BoxContact = ({
         </div>
       </div>
       {showModal && (
-        <ModalImage setShow={setShowModal} img={"./Images/branch/vanak.png"} />
+        <ModalImage setShow={setShowModal} img={img} />
       )}
     </>
   );

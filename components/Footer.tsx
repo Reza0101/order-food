@@ -22,7 +22,7 @@ const Footer = () => {
             پرسش های متوادل
           </Link>
           <Link
-            href="/"
+            href="/rules"
             className="text-[10px] hover:text-primary duration-300 md:text-[14px] block py-1"
           >
             قوانین ترخینه

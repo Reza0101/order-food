@@ -8,7 +8,7 @@ const AccordionBS = ({
 }: {
   title: string;
   caption: string;
-  id: string;
+  id: number;
 }) => {
   const [open, setOpen] = useState(false);
 

@@ -1,8 +1,6 @@
 import Layout from "@/components/Layout";
 import AccordionBS from "@/components/Accordion";
 const FAQ = () => {
-
-
   const FAQ = [
     {
       id: 1,

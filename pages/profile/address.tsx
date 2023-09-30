@@ -2,8 +2,12 @@ import Footer from "@/components/Footer";
 import Layout from "@/components/Layout";
 import BoxAddress from "@/components/cart/Box-Address";
 import BoxProfile from "@/components/profile/Box-profile";
+import { useState } from "react";
 
 const address = () => {
+
+
+
   return (
     <Layout>
       <div className="px-[20px] md:px-[60px] lg:px-[80px] flex items-start gap-5">
@@ -22,10 +26,9 @@ const address = () => {
           </div>
           <hr />
           <div className="flex flex-wrap mt-5 gap-5 justify-center">
-            <BoxAddress />
-            <BoxAddress />
-            <BoxAddress />
-            <BoxAddress />
+            <BoxAddress  />
+            <BoxAddress  />
+
           </div>
           <button className="text-primary md:hidden bg-white border-primary border py-1 px-3 mx-auto mt-4 rounded-4 block">افزودن آدرس جدید</button>
         </div>

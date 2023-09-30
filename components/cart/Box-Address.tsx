@@ -2,9 +2,11 @@ import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ModalDelete from "../profile/ModalDelete";
+import ModalAddress from "../profile/ModalAddress";
 
 const BoxAddress = ({ location, name, phone, setShow }: any) => {
   const [showModalDelete, setShowModalDelete] = useState(false);
+  const [showModalEditAddress, setShowModalEditAddress] = useState(false);
 
   return (
     <>
@@ -13,7 +15,7 @@ const BoxAddress = ({ location, name, phone, setShow }: any) => {
           <p className="text-[10px] sm:text-[14px]">
             تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰
           </p>
-          <AiOutlineEdit className="cursor-pointer text-[16px] sm:text-[18px] md:text-[24px] md:mr-2" />
+          <AiOutlineEdit onClick={() => setShowModalEditAddress(true)} className="cursor-pointer text-[16px] sm:text-[18px] md:text-[24px] md:mr-2" />
           <RiDeleteBin6Line
             onClick={() => setShowModalDelete(true)}
             className="cursor-pointer text-[16px] sm:text-[18px] md:text-[24px] md:mr-2"
@@ -26,6 +28,7 @@ const BoxAddress = ({ location, name, phone, setShow }: any) => {
         </div>
       </div>
       {showModalDelete && <ModalDelete setShow={setShowModalDelete} />}
+      {showModalEditAddress && <ModalAddress setShow={setShowModalEditAddress} />}
     </>
   );
 };

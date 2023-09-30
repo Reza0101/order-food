@@ -5,70 +5,77 @@ import { GoLocation } from "react-icons/go";
 import { RxExit } from "react-icons/rx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import ModalExit from "./ModalExit";
 
 const BoxProfile = () => {
   const { pathname } = useRouter();
-  console.log(pathname);
+  const [showModalExit, setShowModalExit] = useState(false);
 
   const linkProfile = [
     {
       id: 1,
       text: "پروفایل",
-      url: '/profile',
+      url: "/profile",
       route: "/",
       icon: <AiOutlineUser className="text-[24px]" />,
     },
     {
       id: 2,
       text: "پیگیری سفارشات",
-      url: '/profile/ordersTrack',
+      url: "/profile/ordersTrack",
       route: "/ordersTrack",
       icon: <MdPayment className="text-[24px]" />,
     },
     {
       id: 3,
       text: "علاقه مندی ها",
-      url: '/profile/favoites',
+      url: "/profile/favoites",
       route: "/favoites",
       icon: <BiSolidUser className="text-[24px]" />,
     },
     {
       id: 4,
       text: "آدرس های من",
-      url: '/',
+      url: "/",
       route: "/address",
       icon: <GoLocation className="text-[24px]" />,
     },
   ];
 
   return (
-    <div className="border m-5 w-[280px] h-[342px] border-gray-4 rounded-4 p-2">
-      <div className="flex my-4 items-center gap-3 justify-start">
-        <img src="./Images/profile.png" className="w-[80px]" alt="" />
-        <div className="flex flex-col gap-2">
-          <p className="text-[16px]">سردار وظیفه</p>
-          <p className="text-[12px]">09145566268</p>
+    <>
+      <div className="border m-5 w-[280px] h-[342px] border-gray-4 rounded-4 p-2">
+        <div className="flex my-4 items-center gap-3 justify-start">
+          <img src="/Images/profile.png" className="w-[80px]" alt="" />
+          <div className="flex flex-col gap-2">
+            <p className="text-[16px]">سردار وظیفه</p>
+            <p className="text-[12px]">09145566268</p>
+          </div>
+        </div>
+        <hr />
+        <div className="flex flex-col gap-3 mt-5">
+          {linkProfile.map((item) => (
+            <div
+              className={`flex items-center gap-1 ${
+                item.url === pathname &&
+                "border-primary text-primary font-[700]"
+              }`}
+            >
+              {item.icon}
+              <Link href={`/profile${item.route}`}>{item.text}</Link>
+            </div>
+          ))}
+          <div onClick={() => setShowModalExit(true)} className="flex cursor-pointer items-center gap-1 text-error">
+            <RxExit className="rotate-180" />
+            <p>خروج</p>
+          </div>
         </div>
       </div>
-      <hr />
-      <div className="flex flex-col gap-3 mt-5">
-        {linkProfile.map((item) => (
-          <div
-            className={`flex items-center gap-1 ${
-              item.url === pathname &&
-              "border-primary text-primary font-[700]"
-            }`}
-          >
-            {item.icon}
-            <Link href={`/profile${item.route}`}>{item.text}</Link>
-          </div>
-        ))}
-        <Link className="flex items-center gap-1 text-error" href="/">
-          <RxExit className="rotate-180" />
-          <p>خروج</p>
-        </Link>
-      </div>
-    </div>
+      {
+        showModalExit && <ModalExit setShow={setShowModalExit} />
+      }
+    </>
   );
 };
 

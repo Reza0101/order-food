@@ -14,24 +14,28 @@ const BoxProfile = () => {
     {
       id: 1,
       text: "پروفایل",
-      route: "/profile",
+      url: '/profile',
+      route: "/",
       icon: <AiOutlineUser className="text-[24px]" />,
     },
     {
       id: 2,
       text: "پیگیری سفارشات",
+      url: '/profile/ordersTrack',
       route: "/ordersTrack",
       icon: <MdPayment className="text-[24px]" />,
     },
     {
       id: 3,
       text: "علاقه مندی ها",
+      url: '/profile/favoites',
       route: "/favoites",
       icon: <BiSolidUser className="text-[24px]" />,
     },
     {
       id: 4,
       text: "آدرس های من",
+      url: '/',
       route: "/address",
       icon: <GoLocation className="text-[24px]" />,
     },
@@ -51,7 +55,7 @@ const BoxProfile = () => {
         {linkProfile.map((item) => (
           <div
             className={`flex items-center gap-1 ${
-              item.route === pathname &&
+              item.url === pathname &&
               "border-primary text-primary font-[700]"
             }`}
           >

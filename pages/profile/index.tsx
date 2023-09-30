@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout"
 import BoxProfile from "@/components/profile/Box-profile"
 
-const profile = () => {
+const index = () => {
     return (
         <Layout>
             <BoxProfile />
@@ -9,4 +9,4 @@ const profile = () => {
     )
 }
 
-export default profile
+export default index

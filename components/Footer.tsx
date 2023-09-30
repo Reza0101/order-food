@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      style={{ backgroundImage: `url(./Images/Footer.png)` }}
+      style={{ backgroundImage: `url(/Images/Footer.png)`}}
       className="w-full px-[20px] md:px-[50px] text-white flex flex-col md:items-start py-3 md:flex-row items-center justify-around bg-cover bg-center h-fit"
     >
       {/* Links Footer */}

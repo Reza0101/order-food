@@ -37,7 +37,7 @@ const BoxProfile = () => {
     {
       id: 4,
       text: "آدرس های من",
-      url: "/",
+      url: "/profile/address",
       route: "/address",
       icon: <GoLocation className="text-[24px]" />,
     },
@@ -45,7 +45,7 @@ const BoxProfile = () => {
 
   return (
     <>
-      <div className="border m-5 w-[280px] h-[342px] border-gray-4 rounded-4 p-2">
+      <div className="border w-[250px] h-[342px] border-gray-4 rounded-4 p-2">
         <div className="flex my-4 items-center gap-3 justify-start">
           <img src="/Images/profile.png" className="w-[80px]" alt="" />
           <div className="flex flex-col gap-2">

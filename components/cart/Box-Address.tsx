@@ -3,7 +3,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 const BoxAddress = ({ location, name, phone }: any) => {
   return (
-    <div className="w-full sm:w-[260px] md:w-[280px] lg:w-[300px] border-primary bg-gray-1 rounded-4 border  p-2">
+    <div className="w-full sm:w-[260px] md:w-[400px] lg:w-[300px] border-primary bg-gray-1 rounded-4 border  p-2">
       <div className="flex items-center justify-around">
         <p className="text-[10px] sm:text-[14px]">
           تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰

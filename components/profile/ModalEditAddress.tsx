@@ -1,4 +1,4 @@
-const ModalAddress = ({ setShow }: any) => {
+const ModalEditAddress = ({ setShow }: any) => {
   return (
     <div
       onClick={() => setShow(false)}
@@ -42,4 +42,4 @@ const ModalAddress = ({ setShow }: any) => {
   );
 };
 
-export default ModalAddress;
+export default ModalEditAddress;

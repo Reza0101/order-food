@@ -1,11 +1,13 @@
-import Footer from "@/components/Footer";
 import Layout from "@/components/Layout";
 import BoxAddress from "@/components/cart/Box-Address";
 import BoxProfile from "@/components/profile/Box-profile";
-import { useState } from "react";
 import Link from "next/link";
+import ModalAddAddress from "@/components/profile/ModalAddAddress";
+import { useState } from "react";
 
 const address = () => {
+  const [showModalAddAddress, setShowModalAddAddress] = useState(false);
+
   return (
     <Layout>
       <div className="px-[20px] md:px-[60px] lg:px-[80px] flex items-start gap-5">
@@ -18,7 +20,7 @@ const address = () => {
           {/* not empty address */}
           <div className="flex pb-2 items-center justify-center md:justify-between">
             <p className="text-[20px]">آدرس ها</p>
-            <div className="hidden md:flex items-center gap-1 cursor-pointer text-[12px] text-primary">
+            <div onClick={() => setShowModalAddAddress(true)} className="hidden md:flex items-center gap-1 cursor-pointer text-[12px] text-primary">
               <p>افزدون آدرس جدید</p>
               <p className="border border-primary rounded-full w-4 flex items-center justify-center h-4">
                 +
@@ -34,7 +36,7 @@ const address = () => {
             />
             <div className="flex absolute z-40 flex-col gap-3 items-center">
               <p>شما در حال حاضر هیچ آدرسی را ثبت نکرده اید!</p>
-              <p className="rounded-4 border border-primary py-1 px-3">
+              <p onClick={() => setShowModalAddAddress(true)} className="rounded-4 border border-primary py-1 px-3">
                 <Link href="">افزودن آدرس</Link>
               </p>
             </div>
@@ -48,6 +50,10 @@ const address = () => {
           </button>
         </div>
       </div>
+
+      {showModalAddAddress && (
+        <ModalAddAddress setShow={setShowModalAddAddress} />
+      )}
     </Layout>
   );
 };

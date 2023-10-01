@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ModalDelete from "../profile/ModalDelete";
-import ModalAddress from "../profile/ModalAddress";
+import ModalEditAddress from "../profile/ModalEditAddress";
 
 const BoxAddress = ({ location, name, phone, setShow }: any) => {
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -28,7 +28,7 @@ const BoxAddress = ({ location, name, phone, setShow }: any) => {
         </div>
       </div>
       {showModalDelete && <ModalDelete setShow={setShowModalDelete} />}
-      {showModalEditAddress && <ModalAddress setShow={setShowModalEditAddress} />}
+      {showModalEditAddress && <ModalEditAddress setShow={setShowModalEditAddress} />}
     </>
   );
 };

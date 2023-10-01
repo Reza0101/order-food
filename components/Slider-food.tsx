@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 export default function SliderBox({ data }: any) {
-  console.log(data);
 
   return (
     <div dir="rtl">

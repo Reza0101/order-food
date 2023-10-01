@@ -5,11 +5,97 @@ import Link from "next/link";
 import { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { IoIosArrowBack } from "react-icons/io";
+import BoxFood from "@/components/Box-food";
 
 const favoites = () => {
   const listFood = ["همه", "غذای اصلی", "پیش غذا", "دسر", "نوشیدنی"];
   const [activeFoodList, setActiveFoodList] = useState("همه");
-
+  const nonIranianFood = [
+    {
+      id: 1,
+      like: true,
+      img: "/Images/non-iranian-food/pastasabzigat.png",
+      name: "پاستا سبزیجات",
+      price: 175000,
+      discount: 20,
+      star: 5,
+      compounds: "پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده",
+    },
+    {
+      id: 2,
+      like: true,
+      img: "/Images/non-iranian-food/pastabelonez.png",
+      name: "پاستا بلونز",
+      price: 170000,
+      discount: 17,
+      star: 4,
+      compounds:
+        "اسپاگتی، گوشت چرخ کرده، هویج، ساقه کرفس، گوجه فرنگی، سیر، پیاز، پنیر پارمزان، روغن زیتون",
+    },
+    {
+      id: 3,
+      like: true,
+      img: "/Images/non-iranian-food/ratatoi.png",
+      name: "راتاتویی",
+      price: 180000,
+      discount: 35,
+      star: 4,
+      compounds:
+        "بادمجان، گوجه فرنگی، کدو سبز، پیاز، رب گوجه فرنگی، روغن زیتون، پنیر پارمزان",
+    },
+    {
+      id: 4,
+      like: true,
+      img: "/Images/non-iranian-food/lazania.png",
+      name: "لازانیا",
+      price: 150000,
+      star: 5,
+      compounds:
+        "لازانیا، قارچ، ریحان تازه، جعفری تازه، گوجه فرنگی، پنیر پیتزا، بادمجان",
+    },
+    {
+      id: 5,
+      like: true,
+      img: "/Images/non-iranian-food/soshi.png",
+      name: "سوشی",
+      price: 100000,
+      discount: 15,
+      star: 4,
+      compounds:
+        "جلبک دریایی/ نوری، برنج کته، سرکه سفید (یا سرکه برنج)، شکر، نمک دریا",
+    },
+    {
+      id: 6,
+      like: true,
+      img: "/Images/non-iranian-food/pakorasabzigat.png",
+      name: "پاکورا سبزیجات",
+      price: 125000,
+      discount: 8,
+      star: 4,
+      compounds: "گرام ماسالا، پودر کاری، سیر له شده، ،گشنیز خرد شده",
+    },
+    {
+      id: 7,
+      like: true,
+      img: "/Images/non-iranian-food/kalozeesfenag.png",
+      name: "کالوزه اسفناج",
+      price: 19000,
+      discount: 17,
+      star: 5,
+      compounds:
+        "اسفناج، قارچ، پنیر موزارلا یا پنیر پیتزا، پنیر ریکوتا یا پنیر خامه ای، پیاز، سیر، روغن زیتون",
+    },
+    {
+      id: 8,
+      like: true,
+      img: "/Images/non-iranian-food/palakpanir.png",
+      name: "پالاک پنیر",
+      price: 200000,
+      discount: 15,
+      star: 4,
+      compounds: "پنیر، اسفناج، گوجه، پیاز، سیر ",
+    },
+  ];
   return (
     <Layout>
       <div className="px-[20px] md:px-[60px] lg:px-[80px] flex items-start gap-5">
@@ -60,6 +146,11 @@ const favoites = () => {
               </p>
             </div>
           </div>
+
+            <div className="flex items-center justify-center gap-5 flex-wrap">
+                {nonIranianFood.map(item => <BoxFood {...item} />)}
+            </div>
+
         </div>
       </div>
     </Layout>

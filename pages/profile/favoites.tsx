@@ -1,12 +1,69 @@
-import Layout from "@/components/Layout"
-import BoxProfile from "@/components/profile/Box-profile"
+import Layout from "@/components/Layout";
+import SearchBox from "@/components/SearchBox";
+import BoxProfile from "@/components/profile/Box-profile";
+import Link from "next/link";
+import { useState } from "react";
+import { TiTick } from "react-icons/ti";
+import { IoIosArrowBack } from "react-icons/io";
 
 const favoites = () => {
-    return (
-        <Layout>
-            <BoxProfile />
-        </Layout>
-    )
-}
+  const listFood = ["همه", "غذای اصلی", "پیش غذا", "دسر", "نوشیدنی"];
+  const [activeFoodList, setActiveFoodList] = useState("همه");
 
-export default favoites
+  return (
+    <Layout>
+      <div className="px-[20px] md:px-[60px] lg:px-[80px] flex items-start gap-5">
+        <div className="hidden md:block mt-5">
+          <BoxProfile />
+        </div>
+        <div className="rounded-4 border border-gray-4 p-5 w-full my-5">
+          {/* empty address */}
+
+          {/* not empty address */}
+          <div className="flex pb-2 items-center justify-center md:justify-between">
+            <p className="text-[12px] md:text-[20px]">علاقه مندی ها</p>
+          </div>
+          <hr />
+          <div className="flex items-center mt-5 justify-between">
+            <div className="items-end gap-2 hidden xl:flex">
+              {listFood.map((item) => (
+                <div
+                  onClick={() => setActiveFoodList(item)}
+                  className={`flex text-[12px] p-1 cursor-pointer items-center gap-1 rounded-8 ${item === activeFoodList ? 'bg-tint-1' : 'bg-gray-3'}`}
+                >
+                  <TiTick
+                    className={`${
+                      item === activeFoodList ? "block" : "hidden"
+                    }`}
+                  />
+                  <p>{item}</p>
+                  <IoIosArrowBack
+                    className={`${
+                      item === activeFoodList ? "hidden" : "block"
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+            <SearchBox />
+          </div>
+          <div className="flex w-full h-[350px] items-center justify-center">
+            <img
+              className="w-[200px] absolute h-[190px] mx-auto"
+              src="/Images/empty-page.png"
+              alt=""
+            />
+            <div className="flex absolute z-40 flex-col gap-3 items-center">
+              <p>شما در حال حاضر هیچ محصولی را به علاقه‌مندی‌ها اضافه نکرده‌اید!</p>
+              <p className="rounded-4 border border-primary py-1 px-3">
+                <Link href="/menu">منوی رستوران</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default favoites;

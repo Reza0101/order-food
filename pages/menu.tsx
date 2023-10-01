@@ -348,7 +348,7 @@ const menu = () => {
               </div>
             ))}
           </div>
-          <div className="md:hidden mx-auto w-full">
+          <div className="md:hidden mx-auto mt-4 w-full">
             <SearchBox />
           </div>
         </div>

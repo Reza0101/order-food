@@ -4,7 +4,7 @@ import { RiSearch2Line } from "react-icons/ri";
 const SearchBox = () => {
   return (
     <>
-      <div className="w-[full] sm:w-[320px] rounded-4 flex items-center py-[2px] mt-5 mx-auto px-[8px] justify-between border border-black">
+      <div className="w-full sm:w-[350px] rounded-4 flex items-center py-[2px] mx-auto px-[8px] justify-between border border-black">
         <input
           type="text"
           placeholder="جستجو"

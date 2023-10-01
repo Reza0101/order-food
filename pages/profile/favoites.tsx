@@ -110,12 +110,14 @@ const favoites = () => {
             <p className="text-[12px] md:text-[20px]">علاقه مندی ها</p>
           </div>
           <hr />
-          <div className="flex items-center mt-5 justify-between">
+          <div className="flex items-center mt-5 justify-center gap-3">
             <div className="items-end gap-2 hidden xl:flex">
               {listFood.map((item) => (
                 <div
                   onClick={() => setActiveFoodList(item)}
-                  className={`flex text-[12px] p-1 cursor-pointer items-center gap-1 rounded-8 ${item === activeFoodList ? 'bg-tint-1' : 'bg-gray-3'}`}
+                  className={`flex text-[12px] p-1 cursor-pointer items-center gap-1 rounded-8 ${
+                    item === activeFoodList ? "bg-tint-1" : "bg-gray-3"
+                  }`}
                 >
                   <TiTick
                     className={`${
@@ -133,6 +135,7 @@ const favoites = () => {
             </div>
             <SearchBox />
           </div>
+          {/* empty page */}
           <div className="flex w-full h-[350px] items-center justify-center">
             <img
               className="w-[200px] absolute h-[190px] mx-auto"
@@ -140,17 +143,32 @@ const favoites = () => {
               alt=""
             />
             <div className="flex absolute z-40 flex-col gap-3 items-center">
-              <p>شما در حال حاضر هیچ محصولی را به علاقه‌مندی‌ها اضافه نکرده‌اید!</p>
+              <p>
+                شما در حال حاضر هیچ محصولی را به علاقه‌مندی‌ها اضافه نکرده‌اید!
+              </p>
               <p className="rounded-4 border border-primary py-1 px-3">
                 <Link href="/menu">منوی رستوران</Link>
               </p>
             </div>
           </div>
 
-            <div className="flex items-center justify-center gap-5 flex-wrap">
-                {nonIranianFood.map(item => <BoxFood {...item} />)}
-            </div>
+          {/* item favoites */}
 
+          <div className="flex items-center justify-center gap-5 flex-wrap">
+            {nonIranianFood.map((item) => (
+              <BoxFood {...item} />
+            ))}
+          </div>
+          {/* match notefound */}
+
+          <div>
+            <p className="text-center my-5">موردی با این مشخصات پیدا نکردیم!</p>
+            <img
+              src="/Images/Matchnotfound.png"
+              className="w-[280px] md:w-[450px] mx-auto"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </Layout>

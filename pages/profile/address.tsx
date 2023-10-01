@@ -3,11 +3,9 @@ import Layout from "@/components/Layout";
 import BoxAddress from "@/components/cart/Box-Address";
 import BoxProfile from "@/components/profile/Box-profile";
 import { useState } from "react";
+import Link from "next/link";
 
 const address = () => {
-
-
-
   return (
     <Layout>
       <div className="px-[20px] md:px-[60px] lg:px-[80px] flex items-start gap-5">
@@ -15,6 +13,9 @@ const address = () => {
           <BoxProfile />
         </div>
         <div className="rounded-4 border border-gray-4 p-5 w-full my-5">
+          {/* empty address */}
+
+          {/* not empty address */}
           <div className="flex pb-2 items-center justify-center md:justify-between">
             <p className="text-[20px]">آدرس ها</p>
             <div className="hidden md:flex items-center gap-1 cursor-pointer text-[12px] text-primary">
@@ -25,12 +26,26 @@ const address = () => {
             </div>
           </div>
           <hr />
-          <div className="flex flex-wrap mt-5 gap-5 justify-center">
-            <BoxAddress  />
-            <BoxAddress  />
-
+          <div className="flex w-full h-[350px] items-center justify-center">
+            <img
+              className="w-[200px] absolute h-[190px] mx-auto"
+              src="/Images/empty-page.png"
+              alt=""
+            />
+            <div className="flex absolute z-40 flex-col gap-3 items-center">
+              <p>شما در حال حاضر هیچ آدرسی را ثبت نکرده اید!</p>
+              <p className="rounded-4 border border-primary py-1 px-3">
+                <Link href="">افزودن آدرس</Link>
+              </p>
+            </div>
           </div>
-          <button className="text-primary md:hidden bg-white border-primary border py-1 px-3 mx-auto mt-4 rounded-4 block">افزودن آدرس جدید</button>
+          <div className="flex flex-wrap mt-5 gap-5 justify-center">
+            <BoxAddress />
+            <BoxAddress />
+          </div>
+          <button className="text-primary md:hidden bg-white border-primary border py-1 px-3 mx-auto mt-4 rounded-4 block">
+            افزودن آدرس جدید
+          </button>
         </div>
       </div>
     </Layout>

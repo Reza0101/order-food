@@ -8,10 +8,12 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineWatchLater, MdOutlinePayment } from "react-icons/md";
 import BoxFood from "@/components/profile/Box-food";
+import ModalCancelOrder from "@/components/profile/ModalCandeOrder";
 
 const ordersTrack = () => {
   const listOrders = ["همه", "جاری", "تحویل شده", "لغو شده"];
   const [filterOrdersName, setFilterOrdersName] = useState("همه");
+  const [showModalCancelOrder, setShowModalCancelOrder] = useState(false);
 
   return (
     <Layout>
@@ -89,6 +91,7 @@ const ordersTrack = () => {
             </div>
             <div className="flex justify-center md:justify-end">
               <button
+                onClick={() => setShowModalCancelOrder(true)}
                 className="text-error border border-error py-1 px-3 rounded-4 w-fit"
               >
                 لغو سفارش
@@ -206,6 +209,9 @@ const ordersTrack = () => {
           </div>
         </div>
       </div>{" "}
+      {showModalCancelOrder && (
+        <ModalCancelOrder setShow={setShowModalCancelOrder} />
+      )}
     </Layout>
   );
 };

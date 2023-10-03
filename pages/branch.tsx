@@ -252,7 +252,7 @@ const branch = () => {
           <SliderBox data={noneIranianFood} />
         </div>
         <Link
-          href="/"
+          href="/menu"
           className="rounded-4 border text-[12px] myt-2 mb-7 gap-1 px-2 border-primary text-primary py-1 w-fit mx-auto md:text-[16px] flex items-center"
         >
           <img src="./Images/note.png" alt="" />

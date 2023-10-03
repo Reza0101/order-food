@@ -5,7 +5,6 @@ import { BiMenu, BiSearchAlt } from "react-icons/bi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
 import {
-  MdKeyboardArrowDown,
   MdOutlineMenuBook,
   MdOutlineRealEstateAgent,
 } from "react-icons/md";
@@ -13,10 +12,13 @@ import { ImLibrary } from "react-icons/im";
 import { FiUsers } from "react-icons/fi";
 import { LuPhoneCall } from "react-icons/lu";
 import SearchModal from "./SearchModal";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const [isShowSearchBox, setIsShowSearchBox] = useState<boolean>(false) 
+  const {pathname} = useRouter()
+  
 
 
 
@@ -109,7 +111,7 @@ const Header = () => {
             </div>
             {linksNavbar.map((item) => (
               <>
-                <div className="sm:text-primary group px-[16px] sm:px-0 link-navbar text-black">
+                <div className={`sm:text-primary group px-[16px] sm:px-0 link-navbar text-black ${item.route === pathname && 'text-primary font-bold'}`}>
                   <Link
                     href={item.route}
                     className="flex items-center gap-2 mt-[8px] border-b sm:border-none border-gray-4 pb-1"

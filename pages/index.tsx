@@ -52,7 +52,7 @@ export default function Home() {
         <SliderLanding />
 
         {/* Search box */}
-        <div className="md:hidden px-[20px]">
+        <div className="md:hidden my-5 px-[20px]">
           <SearchBox />
         </div>
 

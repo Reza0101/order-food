@@ -42,7 +42,7 @@ const Cart = ({ setPage }: any) => {
           <div className="flex py-1 my-1 text-[14px] items-center justify-between w-full">
             <p>تخفیف محصولات</p>
             <p>
-              <span>{formatPrice('63000')}</span> تومان
+              <span>{formatPrice("63000")}</span> تومان
             </p>
           </div>
           <hr />
@@ -60,13 +60,11 @@ const Cart = ({ setPage }: any) => {
             </p>
           </div>
           <hr />
-          <div className="flex text-[16px] items-center justify-center gap-2 bg-primary text-white rounded-4 w-full py-1 my-2 cursor-pointer">
-            <p
-              onClick={() => setPage((prev : number) => prev + 1)}
-              className="font-[400]"
-            >
-              تکمیل اطلاعات
-            </p>
+          <div
+            onClick={() => setPage((prev: number) => prev + 1)}
+            className="flex text-[16px] items-center justify-center gap-2 bg-primary text-white rounded-4 w-full py-1 my-2 cursor-pointer"
+          >
+            <p className="font-[400]">تکمیل اطلاعات</p>
           </div>
         </div>
       </div>

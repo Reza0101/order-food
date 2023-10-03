@@ -7,7 +7,7 @@ import { useState } from "react";
 import { formatPrice } from "@/utils/helper";
 
 const Payment = ({ setPage, setCompleted }: any) => {
-  const [payment, setPayment] = useState("internet");
+  const [payment, setPayment] = useState("in-person");
   const [bank, setBank] = useState("saman");
   const banks = [
     { id: 1, img: "./Images/banks/saman.png", name: "saman" },

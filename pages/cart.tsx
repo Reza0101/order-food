@@ -7,6 +7,7 @@ import { MdPayment } from "react-icons/md";
 import Cart from "@/components/cart/Cart";
 import Information from "@/components/cart/Information";
 import Payment from "@/components/cart/Payment";
+import { useRouter } from "next/router";
 const cart = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [completed, setCompleted] = useState(false);
@@ -21,6 +22,14 @@ const cart = () => {
     <Information setPage={setCurrentPage} />,
     <Payment setCompleted={setCompleted} setpate={setCurrentPage} />,
   ];
+
+  const route = useRouter();
+
+  if (completed) {
+    setTimeout(() => {
+      route.push("/");
+    }, 2000);
+  }
 
   return (
     <Layout>
@@ -52,9 +61,17 @@ const cart = () => {
           </div>
         ))}
       </div>
-      {completed ? <>
-        <img src="./Images/Successful payment.png" className="w-full mx-auto h-[500px] md:h-[600px]" alt="" />
-      </> : <>{stepperPage[currentPage - 1]}</>}
+      {completed ? (
+        <>
+          <img
+            src="./Images/Successful payment.png"
+            className="w-full mx-auto h-[500px] md:h-[600px]"
+            alt=""
+          />
+        </>
+      ) : (
+        <>{stepperPage[currentPage - 1]}</>
+      )}
     </Layout>
   );
 };

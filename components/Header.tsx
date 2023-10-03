@@ -165,15 +165,14 @@ const Header = () => {
         </div>
 
         <div className="pl-[20px] flex items-center gap-2">
-          <Link
-            className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
-            href="/"
+          <div
+            className="text-[24px] cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
           >
             <BiSearchAlt
               onClick={() => setIsShowSearchBox(true)}
               className="hover:text-white duration-300"
             />
-          </Link>
+          </div>
           <Link
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 "
             href="/cart"
@@ -182,20 +181,20 @@ const Header = () => {
           </Link>
           <div
             onClick={() => setShowProfileAccordion((prev) => !prev)}
-            className="text-[24px] flex items-center hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary"
+            className={`text-[24px] flex items-center cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
           >
             <AiOutlineUser className="duration-300 hover:text-white" />
           </div>
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`absolute bg-white rounded-4 p-1 left-1 shadow-drop-shadow-4 top-10 z-50 text-center text-[12px] flex-col gap-3 items-center ${
+            className={`absolute bg-white rounded-4 md:left-12 p-2 left-1 shadow-drop-shadow-4 top-10 md:top-12 z-50 text-center text-[12px] flex-col gap-3 items-start ${
               showProfileAccordion ? "flex" : "hidden"
             }`}
           >
             {linkProfile.map((item) => (
               <Link
                 href={item.url}
-                className={`flex items-center cursor-pointer gap-1 ${
+                className={`flex hover:text-primary items-center cursor-pointer gap-1 ${
                   item.url === pathname && "text-primary font-bold"
                 }`}
               >

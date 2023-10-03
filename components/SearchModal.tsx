@@ -15,7 +15,7 @@ const SearchModal = ({ setShow }: any) => {
         <div className="h-[84px] w-full bg-gray-3 rounded-t-8 flex items-center justify-center">
             <p className="text-[20px] font-bold">جستجو</p>
         </div>
-        <p className="text-center text=[16px] pt-4">لطفا متن خود را تایپ و سپس دکمه Enter را بزنید.</p>
+        <p className="text-center text=[16px] py-4">لطفا متن خود را تایپ و سپس دکمه Enter را بزنید.</p>
         <SearchBox />
       </div>
     </div>

@@ -31,7 +31,7 @@ const ordersTrack = () => {
             {listOrders.map((item) => (
               <div
                 onClick={() => setFilterOrdersName(item)}
-                className={`flex text-[12px] py-1 px-2 md:px-5 cursor-pointer items-center gap-1 rounded-8 ${
+                className={`flex text-[10px] md:text-[12px] py-1 px-1 md:px-5 cursor-pointer items-center md:gap-1 rounded-8 ${
                   item === filterOrdersName ? "bg-tint-1" : "bg-gray-3"
                 }`}
               >

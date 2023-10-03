@@ -142,7 +142,7 @@ const favoites = () => {
               src="/Images/empty-page.png"
               alt=""
             />
-            <div className="flex absolute z-40 flex-col gap-3 items-center">
+            <div className="flex absolute px-[10px] z-40 flex-col text-center gap-3 text-[12px] items-center">
               <p>
                 شما در حال حاضر هیچ محصولی را به علاقه‌مندی‌ها اضافه نکرده‌اید!
               </p>

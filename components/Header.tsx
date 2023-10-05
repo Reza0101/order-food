@@ -173,7 +173,7 @@ const Header = () => {
               className="hover:text-white duration-300"
             />
           </div>
-          <Link
+          <Link 
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 "
             href="/cart"
           >

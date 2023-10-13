@@ -20,58 +20,7 @@ const menu = () => {
   ];
 
   const iranianFood = [
-    {
-      id: 1,
-      img: "/Images/iranianFood/kofteBerengi.png",
-      name: "کوفته برنجی",
-      price: 180000,
-      discount: 35,
-      star: 2,
-      compounds: "برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز",
-    },
-    {
-      id: 2,
-      img: "/Images/iranianFood/kashkBademgan.png",
-      name: "کشک بادمجان",
-      price: 95000,
-      star: 5,
-      compounds: "بادمجان، کشک، نعناع خشک، مغز گردو، سیر، پیاز",
-    },
-    {
-      id: 3,
-      img: "/Images/iranianFood/mirzagasemi.png",
-      name: "میرزا قاسمی",
-      price: 165000,
-      discount: 10,
-      star: 5,
-      compounds: "بادمجان، گوجه فرنگی، تخم مرغ، سیر، رب گوجه فرنگی",
-    },
-    {
-      id: 4,
-      img: "/Images/iranianFood/baglagotog.png",
-      name: "باقلاتوق",
-      price: 180000,
-      discount: 30,
-      star: 4,
-      compounds: "پاچ باقلا، شوید خشک، کره، سیر، تخم مرغ",
-    },
-    {
-      id: 5,
-      img: "/Images/iranianFood/felafel.png",
-      name: "فلافل",
-      price: 80000,
-      star: 3,
-      compounds: "نخود، پیاز، تخم گشنیز، سیر، جعفری، سیب زمینی",
-    },
-    {
-      id: 6,
-      img: "/Images/iranianFood/kalegosh.png",
-      name: "کله جوش",
-      price: 210000,
-      discount: 5,
-      star: 4,
-      compounds: "کشک، گردو، پیاز، نعناع خشک",
-    },
+
     {
       id: 7,
       img: "/Images/iranianFood/boranibademgan.png",

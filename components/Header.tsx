@@ -17,7 +17,7 @@ import { GoLocation } from "react-icons/go";
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const [isShowSearchBox, setIsShowSearchBox] = useState<boolean>(false);
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
   const [showProfileAccordion, setShowProfileAccordion] = useState(false);
 
   const linksNavbar = [
@@ -165,27 +165,28 @@ const Header = () => {
         </div>
 
         <div className="pl-[20px] flex items-center gap-2">
-          <div
-            className="text-[24px] cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary"
-          >
+          <div className="text-[24px] cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 hidden md:block text-primary">
             <BiSearchAlt
               onClick={() => setIsShowSearchBox(true)}
               className="hover:text-white duration-300"
             />
           </div>
-          <Link 
+          <Link
             className="text-[24px] hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 "
             href="/cart"
           >
             <HiOutlineShoppingCart className=" hover:text-white text-primary duration-300" />
           </Link>
           <div
-            onClick={() => setShowProfileAccordion((prev) => !prev)}
+            onClick={() => {
+              setShowProfileAccordion((prev) => !prev);
+              push("/login");
+            }}
             className={`text-[24px] flex items-center cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
           >
             <AiOutlineUser className="duration-300 hover:text-white" />
           </div>
-          <div
+          {/* <div
             onClick={(e) => e.stopPropagation()}
             className={`absolute bg-white rounded-4 md:left-12 p-2 left-1 shadow-drop-shadow-4 top-10 md:top-12 z-50 text-center text-[12px] flex-col gap-3 items-start ${
               showProfileAccordion ? "flex" : "hidden"
@@ -202,7 +203,7 @@ const Header = () => {
                 <p>{item.text}</p>
               </Link>
             ))}
-          </div>
+          </div> */}
           <div
             onClick={() => setShowProfileAccordion(false)}
             className={` w-[100%] h-[100%] z-20 absolute top-0 right-0 

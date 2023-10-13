@@ -1,13 +1,18 @@
 import Layout from "@/components/Layout";
+import useInput from "@/components/panle-admin/input";
+import axios from "@/services/axios";
 import Link from "next/link";
-import { type } from "os";
 import { useForm } from "react-hook-form";
+import useToast from "./../hooks/useToast";
+import { AxiosError } from "axios";
 
+// Type for inputs form
 type IFormInput = {
   email: string;
   password: string;
   confirmPwd: string;
 };
+
 const login = () => {
   const {
     register,
@@ -15,8 +20,28 @@ const login = () => {
     handleSubmit,
   } = useForm<IFormInput>();
 
-  const submitHandler = () => {
-    console.log("success");
+  // useInput values
+  const email = useInput("");
+  const pwd = useInput("");
+
+  // login function
+  const submitHandler = async () => {
+    try {
+      const responseLogin = await axios.post("/auth/login", {
+        email: email.value,
+        pwd: pwd.value,
+      });
+
+      if (responseLogin.status === 200) {
+        useToast("لاگین با موفقیت انجام شد.", "success");
+      }
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        if (err.response?.status === 401) {
+          useToast("لطفا ابتدا ثبت نام کنید.", "error");
+        }
+      }
+    }
   };
 
   return (
@@ -42,6 +67,7 @@ const login = () => {
               ایمیل
             </p>
             <input
+              value={email.value}
               {...register("email", {
                 required: "ایمل خود را وارد کنید!",
                 validate: {
@@ -50,8 +76,11 @@ const login = () => {
                     "آدرس ایمیل اشتباه است!",
                 },
               })}
+              onChange={(e) => email.onChange(e.target.value)}
               type="email"
-              className={`w-full text-left text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4 ${errors.email && 'border-red-400'}`}
+              className={`w-full text-left text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4 ${
+                errors.email && "border-red-400"
+              }`}
             />
             {errors.email?.type && (
               <p className="text-red-500 text-[14px]">
@@ -69,8 +98,12 @@ const login = () => {
                 minLength: 6,
                 maxLength: 20,
               })}
+              value={pwd.value}
+              onChange={(e) => pwd.onChange(e.target.value)}
               type="password"
-              className={`w-full text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4 ${errors.password && 'border-red-400'}`}
+              className={`w-full text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4 ${
+                errors.password && "border-red-400"
+              }`}
             />
             {errors.password?.type && (
               <p className="text-red-500 text-[14px]">

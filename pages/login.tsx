@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import useToast from "./../hooks/useToast";
 import { AxiosError } from "axios";
+import { useRouter } from "next/router";
 
 // Type for inputs form
 type IFormInput = {
@@ -14,6 +15,12 @@ type IFormInput = {
 };
 
 const login = () => {
+
+  const deleteInputValue = () => {
+    email.deleteValue()
+    pwd.deleteValue()
+  }
+  const { push } = useRouter();
   const {
     register,
     formState: { errors },
@@ -34,11 +41,17 @@ const login = () => {
 
       if (responseLogin.status === 200) {
         useToast("لاگین با موفقیت انجام شد.", "success");
+        deleteInputValue()
       }
+
+      setTimeout(() => {
+        push("/");
+      }, 1000);
     } catch (err) {
       if (err instanceof AxiosError) {
         if (err.response?.status === 401) {
           useToast("لطفا ابتدا ثبت نام کنید.", "error");
+          deleteInputValue()
         }
       }
     }

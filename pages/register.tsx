@@ -1,7 +1,11 @@
 import Layout from "@/components/Layout";
+import useInput from "@/components/panle-admin/input";
 import Link from "next/link";
-import { type } from "os";
 import { useForm } from "react-hook-form";
+import axios from "@/services/axios";
+import useToast from "./../hooks/useToast";
+import { useRouter } from "next/router";
+import { AxiosError } from "axios";
 
 type IFormInput = {
   email: string;
@@ -9,6 +13,8 @@ type IFormInput = {
   confirmPwd: string;
 };
 const register = () => {
+  const { push } = useRouter();
+
   const {
     register,
     watch,
@@ -16,8 +22,41 @@ const register = () => {
     handleSubmit,
   } = useForm<IFormInput>();
 
-  const submitHandler = () => {
-    console.log("success");
+  const email = useInput("");
+  const password = useInput("");
+  const confirmPwd = useInput("");
+
+  const deleteInputValue = () => {
+    email.deleteValue()
+    password.deleteValue()
+    confirmPwd.deleteValue()
+  }
+
+  const submitHandler = async () => {
+    try {
+      const responseRegister = await axios.post("/auth/register", {
+        email: email.value,
+        pwd: password.value,
+      });
+
+      if (responseRegister.status === 201) {
+        useToast("ثبت نام با موفقیت انجام شد.", "success");
+        deleteInputValue()
+      }
+
+      console.log(responseRegister);
+
+      setTimeout(() => {
+        push("/");
+      }, 1000);
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        if (err.response?.status === 409) {
+          useToast(" کاربری از قبل وجود دارد.", "error");
+          deleteInputValue()
+        }
+      }
+    }
   };
   return (
     <Layout>
@@ -50,6 +89,8 @@ const register = () => {
                     "آدرس ایمیل اشتباه است!",
                 },
               })}
+              value={email.value}
+              onChange={(e) => email.onChange(e.target.value)}
               type="email"
               className="w-full text-left text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4"
             />
@@ -69,6 +110,8 @@ const register = () => {
                 minLength: 6,
                 maxLength: 20,
               })}
+              value={password.value}
+              onChange={(e) => password.onChange(e.target.value)}
               type="password"
               className="w-full text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4"
             />
@@ -102,6 +145,8 @@ const register = () => {
                   }
                 },
               })}
+              value={confirmPwd.value}
+              onChange={(e) => confirmPwd.onChange(e.target.value)}
               type="password"
               className="w-full text-[14px] border outline-none border-gray-4 py-1 px-2 rounded-4"
             />

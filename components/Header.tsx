@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { MdPayment } from "react-icons/md";
 import { BiSolidUser } from "react-icons/bi";
 import { GoLocation } from "react-icons/go";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
@@ -92,6 +93,10 @@ const Header = () => {
       icon: <GoLocation className="text-[14px]" />,
     },
   ];
+
+  const userData = useSelector((state: any) => state.user);
+  
+
   return (
     <div className="w-full py-[8px] md:px-[54px] md:py-[16px]">
       <div className="flex items-center justify-between overflow-x-hidden">
@@ -177,33 +182,48 @@ const Header = () => {
           >
             <HiOutlineShoppingCart className=" hover:text-white text-primary duration-300" />
           </Link>
-          <div
-            onClick={() => {
-              setShowProfileAccordion((prev) => !prev);
-              push("/login");
-            }}
-            className={`text-[24px] flex items-center cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
-          >
-            <AiOutlineUser className="duration-300 hover:text-white" />
-          </div>
-          {/* <div
-            onClick={(e) => e.stopPropagation()}
-            className={`absolute bg-white rounded-4 md:left-12 p-2 left-1 shadow-drop-shadow-4 top-10 md:top-12 z-50 text-center text-[12px] flex-col gap-3 items-start ${
-              showProfileAccordion ? "flex" : "hidden"
-            }`}
-          >
-            {linkProfile.map((item) => (
-              <Link
-                href={item.url}
-                className={`flex hover:text-primary items-center cursor-pointer gap-1 ${
-                  item.url === pathname && "text-primary font-bold"
+
+          {userData.authState ? (
+            <>
+              <div
+                onClick={() => {
+                  setShowProfileAccordion((prev) => !prev);
+                }}
+                className={`text-[24px] flex items-center cursor-pointer hover:text-white hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
+              >
+                <p className="text-[18px]">{userData.data[0].data.email.slice(0, 4)}</p>
+              </div>
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className={`absolute bg-white rounded-4 md:left-12 p-2 left-1 shadow-drop-shadow-4 top-10 md:top-12 z-50 text-center text-[12px] flex-col gap-3 items-start ${
+                  showProfileAccordion ? "flex" : "hidden"
                 }`}
               >
-                {item.icon}
-                <p>{item.text}</p>
-              </Link>
-            ))}
-          </div> */}
+                {linkProfile.map((item) => (
+                  <Link
+                    href={item.url}
+                    className={`flex hover:text-primary items-center cursor-pointer gap-1 ${
+                      item.url === pathname && "text-primary font-bold"
+                    }`}
+                  >
+                    {item.icon}
+                    <p>{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div
+              onClick={() => {
+                setShowProfileAccordion((prev) => !prev);
+                push("/login");
+              }}
+              className={`text-[24px] flex items-center cursor-pointer hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
+            >
+              <AiOutlineUser className="duration-300 hover:text-white" />
+            </div>
+          )}
+
           <div
             onClick={() => setShowProfileAccordion(false)}
             className={` w-[100%] h-[100%] z-20 absolute top-0 right-0 

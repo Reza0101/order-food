@@ -7,10 +7,17 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import ModalExit from "./ModalExit";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "@/Redux/store/user";
+import axios from "@/services/axios";
 
 const BoxProfile = () => {
   const { pathname } = useRouter();
   const [showModalExit, setShowModalExit] = useState(false);
+  const userData = useSelector((state: any) => state.user);
+  const data = userData?.data[0]?.data
+  const dispatch = useDispatch()
+
 
   const linkProfile = [
     {
@@ -43,14 +50,19 @@ const BoxProfile = () => {
     },
   ];
 
+  const logoutUser = async () => {
+    dispatch(logout);
+    await axios.post('/auth/logout')
+  }
+
   return (
     <>
       <div className="border w-[250px] h-[342px] border-gray-4 rounded-4 p-2">
         <div className="flex my-4 items-center gap-3 justify-start">
           <img src="/Images/profile.png" className="w-[80px]" alt="" />
           <div className="flex flex-col gap-2">
-            <p className="text-[16px]">سردار وظیفه</p>
-            <p className="text-[12px]">09145566268</p>
+            <p className="text-[12px]">{data?.email}</p>
+            <p className="text-[12px]">{data?.password}</p>
           </div>
         </div>
         <hr />
@@ -68,7 +80,7 @@ const BoxProfile = () => {
           ))}
           <div onClick={() => setShowModalExit(true)} className="flex cursor-pointer items-center gap-1 text-error">
             <RxExit className="rotate-180" />
-            <p>خروج</p>
+            <p onClick={logoutUser}>خروج</p>
           </div>
         </div>
       </div>

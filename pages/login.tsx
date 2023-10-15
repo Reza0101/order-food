@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import useToast from "./../hooks/useToast";
 import { AxiosError } from "axios";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { loginUser } from "@/Redux/store/user";
 
 // Type for inputs form
 type IFormInput = {
@@ -15,6 +17,8 @@ type IFormInput = {
 };
 
 const login = () => {
+
+  const dispatch = useDispatch()
 
   const deleteInputValue = () => {
     email.deleteValue()
@@ -39,9 +43,14 @@ const login = () => {
         pwd: pwd.value,
       });
 
+      const accessToken = JSON.parse(responseLogin.request.response).accessToken
+      
+
       if (responseLogin.status === 200) {
         useToast("لاگین با موفقیت انجام شد.", "success");
+        dispatch(loginUser({email: email.value, password: pwd.value, accessToken}))
         deleteInputValue()
+
       }
 
       setTimeout(() => {

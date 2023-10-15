@@ -191,7 +191,7 @@ const Header = () => {
                 }}
                 className={`text-[24px] flex items-center cursor-pointer hover:text-white hover:bg-primary duration-300 bg-tint-1 p-1 rounded-8 text-primary`}
               >
-                <p className="text-[18px]">{userData.data[0].data.email.slice(0, 4)}</p>
+                <p className="text-[18px]">{userData?.data[0]?.data?.email.slice(0, 3)}</p>
               </div>
               <div
                 onClick={(e) => e.stopPropagation()}

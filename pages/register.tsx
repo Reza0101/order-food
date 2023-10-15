@@ -6,6 +6,8 @@ import axios from "@/services/axios";
 import useToast from "./../hooks/useToast";
 import { useRouter } from "next/router";
 import { AxiosError } from "axios";
+import { useDispatch } from "react-redux";
+import { loginUser } from "@/Redux/store/user";
 
 type IFormInput = {
   email: string;
@@ -13,7 +15,9 @@ type IFormInput = {
   confirmPwd: string;
 };
 const register = () => {
+
   const { push } = useRouter();
+  const dispatch = useDispatch()
 
   const {
     register,
@@ -22,16 +26,19 @@ const register = () => {
     handleSubmit,
   } = useForm<IFormInput>();
 
+  // value inputs
   const email = useInput("");
   const password = useInput("");
   const confirmPwd = useInput("");
 
+  // delte input values
   const deleteInputValue = () => {
     email.deleteValue()
     password.deleteValue()
     confirmPwd.deleteValue()
   }
 
+  // function register
   const submitHandler = async () => {
     try {
       const responseRegister = await axios.post("/auth/register", {
@@ -39,10 +46,20 @@ const register = () => {
         pwd: password.value,
       });
 
+
       if (responseRegister.status === 201) {
         useToast("ثبت نام با موفقیت انجام شد.", "success");
+        console.log(responseRegister);
+        
+      const userEmail = JSON.parse(responseRegister.config.data).email
+      const userPwd = JSON.parse(responseRegister.config.data).pwd
+
+      
+
         deleteInputValue()
+        dispatch(loginUser({email: userEmail, password: userPwd}))
       }
+
 
       console.log(responseRegister);
 

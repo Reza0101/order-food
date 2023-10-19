@@ -36,6 +36,7 @@ const cart = () => {
       <div className="flex items-center justify-center my-2">
         {stepper.map((item, index) => (
           <div
+            key={crypto.randomUUID()}
             className={`${
               index + 1 <= currentPage &&
               "text-primary cursor-pointer border-primary"

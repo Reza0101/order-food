@@ -1,13 +1,12 @@
 import Layout from "@/components/Layout";
-import SearchBox from "@/components/SearchBox";
 import BoxProfile from "@/components/profile/Box-profile";
-import Link from "next/link";
-import { useState } from "react";
-import { TiTick } from "react-icons/ti";
-import { IoIosArrowBack } from "react-icons/io";
-import BoxFood from "@/components/Box-food";
+
 
 const index = () => {
+
+
+
+
   return (
     <Layout>
       <div className="px-[20px] mb-5 md:px-[60px] lg:px-[8010x] flex items-start gap-5">
@@ -74,15 +73,20 @@ const index = () => {
                 className="rounded-4 mx-auto block w-[90%] border-gray-4 outline-none placeholder:text-[13px] border p-1"
               />
             </div>
-          </div> 
+          </div>
           <div className="flex items-center gap-5 justify-center">
-                <button className="border border-primary rounded-4 text-primary py-1 px-16">انصراف</button>
-                <button className="bg-primary text-white rounded-4 py-1 px-8">ذخیره اطلاعات</button>
+            <button className="border border-primary rounded-4 text-primary py-1 px-16">
+              انصراف
+            </button>
+            <button className="bg-primary text-white rounded-4 py-1 px-8">
+              ذخیره اطلاعات
+            </button>
           </div>
         </div>
       </div>{" "}
     </Layout>
   );
 };
+
 
 export default index;

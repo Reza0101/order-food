@@ -30,6 +30,7 @@ const ordersTrack = () => {
           <div className="items-end gap-2 m-2 flex">
             {listOrders.map((item) => (
               <div
+                key={crypto.randomUUID()}
                 onClick={() => setFilterOrdersName(item)}
                 className={`flex text-[10px] md:text-[12px] py-1 px-1 md:px-5 cursor-pointer items-center md:gap-1 rounded-8 ${
                   item === filterOrdersName ? "bg-tint-1" : "bg-gray-3"

@@ -57,7 +57,7 @@ const FAQ = () => {
         className={`px-[20px] [&>*:nth-child(1)]:rounded-t-8 [&>*:last-child]:rounded-b-8 my-5 md:px-[60px] lg:px-[80px]`}
       >
         {FAQ.map((item) => (
-          <AccordionBS {...item} />
+          <AccordionBS key={crypto.randomUUID()} {...item} />
         ))}
       </div>
     </Layout>

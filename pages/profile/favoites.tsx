@@ -114,6 +114,7 @@ const favoites = () => {
             <div className="items-end gap-2 hidden xl:flex">
               {listFood.map((item) => (
                 <div
+                  key={crypto.randomUUID()}
                   onClick={() => setActiveFoodList(item)}
                   className={`flex text-[12px] p-1 cursor-pointer items-center gap-1 rounded-8 ${
                     item === activeFoodList ? "bg-tint-1" : "bg-gray-3"
@@ -156,7 +157,7 @@ const favoites = () => {
 
           <div className="flex items-center justify-center gap-5 flex-wrap">
             {nonIranianFood.map((item) => (
-              <BoxFood {...item} />
+              <BoxFood key={crypto.randomUUID()} {...item} />
             ))}
           </div>
           {/* match notefound */}

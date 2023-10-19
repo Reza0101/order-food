@@ -1,3 +1,5 @@
+
+
 const formatPrice = (price: string) => {
   const cost = price;
   return parseFloat(cost)
@@ -5,4 +7,6 @@ const formatPrice = (price: string) => {
     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 };
 
-export {formatPrice}
+
+
+export { formatPrice };

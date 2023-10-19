@@ -264,7 +264,7 @@ const branch = () => {
           className="mySwiper my-2"
         >
           {branchs.map((item) => (
-            <SwiperSlide>
+            <SwiperSlide key={crypto.randomUUID()}>
               <p className="text-center text-[16px] md:text-[14px] font-[700] pb-[16px]">
                 {item.name}
               </p>
@@ -278,7 +278,7 @@ const branch = () => {
                   <BiPhoneCall className="w-[16px] h-[16px] md:w-[25px] md:h-[25px] lg:w-[32px] lg:h-[32px]" />
                   <div className="flex flex-col md:text-[16px] text-[10px]">
                     {item.phones.map((phone) => (
-                      <p>{phone}</p>
+                      <p key={crypto.randomUUID()}>{phone}</p>
                     ))}
                   </div>
                 </div>
@@ -313,7 +313,7 @@ const branch = () => {
             className="mySwiper"
           >
             {usersComment.map((comm) => (
-              <SwiperSlide className="border rounded-4 mb-8 border-gray-4 md:rounded-8 p-3 w-[252px]">
+              <SwiperSlide key={crypto.randomUUID()} className="border rounded-4 mb-8 border-gray-4 md:rounded-8 p-3 w-[252px]">
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1 items-center ml-2 w-[120px]">
                     <img className="w-[56px] h-[56px]" src={comm.img} alt="" />

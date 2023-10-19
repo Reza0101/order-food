@@ -1,10 +1,11 @@
-import react, { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import SliderLanding from "@/components/Slider-Landing";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 import ModalImage from "@/components/ModalImage";
 import SearchBox from "@/components/SearchBox";
+
 
 export default function Home() {
   const [isActiveBranc, setIsActiveBranch] = useState<number>();
@@ -46,6 +47,7 @@ export default function Home() {
     },
   ];
 
+
   return (
     <div className="">
       <Layout>
@@ -63,7 +65,7 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-2 my-5 gap-7 md:gap-0 w-[100%]">
             {menufood.map((food) => (
-              <div>
+              <div key={crypto.randomUUID()}>
                 <img
                   src={food.img}
                   className="w-[120px] mx-auto md:w-[180px] lg:w-[240px] md:h-[180px] lg:h-[240px] h-[120px]"
@@ -144,7 +146,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row my-5 justify-center items-center gap-5 px-[20px]">
             {branchs.map((branch) => (
-              <>
+              <div key={crypto.randomUUID()}>
                 <div
                   onClick={() => setIsActiveBranch(branch.id)}
                   className={`flex md:flex-col h-[80px] relative w-[380px] md:w-[290px] lg:w-[240px] xl:w-[300px] cursor-pointer md:h-[300px] lg:h-[334px] rounded-4 border border-gray-4 ${
@@ -212,7 +214,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>

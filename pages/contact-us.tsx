@@ -50,7 +50,7 @@ const contactUs = () => {
       <div className="flex flex-col my-5 gap-5 items-center px-[20px] md:px-[60px] lg:px-[80px]">
         {/* <BoxContact horsWork={[12, 23]} id={1} setShow={setShowImage} showImage={showImage} /> */}
         {branchs.map((item) => (
-          <BoxContact
+          <BoxContact key={crypto.randomUUID()}
             {...item}
             setShow={setItemBranch}
             showImage={itemBranch}

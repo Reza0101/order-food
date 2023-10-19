@@ -77,7 +77,7 @@ const Franchise = () => {
         <div className="w-full flex justify-center">
           <div className="grid mb-7 grid-rows-8 grid-cols-1 md:grid-rows-4 md:grid-cols-2  md:gap-x-20">
             {benefits.map((item: any) => (
-              <div className="flex items-center justify-center py-1 md:justify-start gap-1">
+              <div key={crypto.randomUUID()} className="flex items-center justify-center py-1 md:justify-start gap-1">
                 <img
                   className="w-[16px]"
                   src="./Images/logos/rectangle.png"

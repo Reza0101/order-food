@@ -2,7 +2,7 @@ import { BiMessageDetail } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between text-primary w-full">
+    <div className="flex items-center px-[20px] md:px-0 justify-between text-primary w-full">
       <div className="flex gap-2 items-center">
         <img src="/Images/profile.png" className="w-[50px]" alt="" />
           <p>مدیر بیکار سایت</p>
@@ -13,5 +13,4 @@ const Header = () => {
     </div>
   );
 };
-
 export default Header;

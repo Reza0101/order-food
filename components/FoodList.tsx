@@ -16,7 +16,7 @@ const FoodList = ({ title, list }: any) => {
         </p>
         <div className="grid grid-cols-1 grid-rows-1 md:grid-rows-2 md:grid-cols-2 gap-3">
           {list.map((item: any) => (
-            <BoxFoodMenu setData={setInforamtionFood} setShow={setShowModal} key={item.id} {...item} />
+            <BoxFoodMenu setData={setInforamtionFood} setShow={setShowModal} key={crypto.randomUUID()} {...item} />
           ))}
         </div>
       </div>

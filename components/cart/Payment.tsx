@@ -116,6 +116,7 @@ const Payment = ({ setPage, setCompleted }: any) => {
                 <div className="flex items-center justify-center gap-4 w-full dm:w-4/6 md:w-8/12">
                   {banks.map((item) => (
                     <img
+                      key={crypto.randomUUID()}
                       onClick={() => setBank(item.name)}
                       src={item.img}
                       className={`w-[64px] md:w-[80px] cursor-pointer ${

@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-export default function SliderNavbar() {
+export default function bar() {
   const sliderItems = [
     {
       id: 1,
@@ -45,7 +45,7 @@ export default function SliderNavbar() {
         className="mySwiper"
       >
         {sliderItems.map((slider) => (
-          <SwiperSlide className="relative bg-black">
+          <SwiperSlide key={crypto.randomUUID()} className="relative bg-black">
             <img
               className="w-[100%] opacity-[0.5] bg-black object-cover h-[176px] sm:h-[220px] md:h-[336px] lg:h-[400px]"
               src={slider.img}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { BiMenu, BiSearchAlt } from "react-icons/bi";
@@ -108,9 +107,7 @@ const Header = () => {
         </div>
         <div className={`${isShowMenu ? "hidden" : "flex"} sm:hidden`}></div>
         <Link href="/">
-          <Image
-            width={100}
-            height={50}
+          <img
             alt="logo image"
             src="/Images/logos/Logo.png"
           />
@@ -120,7 +117,7 @@ const Header = () => {
           onClick={() => setIsShowMenu(false)}
           className={`${
             isShowMenu &&
-            "w-[100%] h-[100%] sm:bg-white flex closeMenu z-50 sm:static sm:justify-center top-0 left-0 z-40 duration-300"
+            "w-[100%] h-[100%] sm:bg-white flex closeMenu sm:static sm:justify-center top-0 left-0 z-40 duration-300"
           } duration-300 transition`}
         >
           <div
@@ -141,7 +138,7 @@ const Header = () => {
               />
             </div>
             {linksNavbar.map((item) => (
-              <>
+              <div key={crypto.randomUUID()}>
                 <div
                   className={`sm:text-primary group px-[16px] sm:px-0 link-navbar text-black ${
                     item.route === pathname && "text-primary font-bold"
@@ -164,7 +161,7 @@ const Header = () => {
                     </div>
                   </Link>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>
@@ -201,6 +198,7 @@ const Header = () => {
               >
                 {linkProfile.map((item) => (
                   <Link
+                    key={crypto.randomUUID()}
                     href={item.url}
                     className={`flex hover:text-primary items-center cursor-pointer gap-1 ${
                       item.url === pathname && "text-primary font-bold"

@@ -35,7 +35,7 @@ export default function SliderBox({ data }: any) {
         className="mySwiper"
       >
         {data.map((item: any) => (
-          <SwiperSlide>
+          <SwiperSlide key={crypto.randomUUID()}>
             <BoxFood {...item} />
           </SwiperSlide>
         ))}

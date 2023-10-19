@@ -7,17 +7,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import ModalExit from "./ModalExit";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "@/Redux/store/user";
-import axios from "@/services/axios";
+import { useSelector } from "react-redux";
 
 const BoxProfile = () => {
   const { pathname } = useRouter();
   const [showModalExit, setShowModalExit] = useState(false);
   const userData = useSelector((state: any) => state.user);
-  const data = userData?.data[0]?.data
-  const dispatch = useDispatch()
-
+  const data = userData?.data[0]?.data;
 
   const linkProfile = [
     {
@@ -50,11 +46,6 @@ const BoxProfile = () => {
     },
   ];
 
-  const logoutUser = async () => {
-    dispatch(logout);
-    await axios.post('/auth/logout')
-  }
-
   return (
     <>
       <div className="border w-[250px] h-[342px] border-gray-4 rounded-4 p-2">
@@ -62,13 +53,14 @@ const BoxProfile = () => {
           <img src="/Images/profile.png" className="w-[80px]" alt="" />
           <div className="flex flex-col gap-2">
             <p className="text-[12px]">{data?.email}</p>
-            <p className="text-[12px]">{data?.password}</p>
+            <p className="text-[12px]">{data?.role === 'admin' ? 'مدیر' : 'کاربر معمولی'}</p>
           </div>
         </div>
         <hr />
         <div className="flex flex-col gap-3 mt-5">
           {linkProfile.map((item) => (
             <div
+              key={crypto.randomUUID()}
               className={`flex items-center gap-1 ${
                 item.url === pathname &&
                 "border-primary text-primary font-[700]"
@@ -78,15 +70,19 @@ const BoxProfile = () => {
               <Link href={`/profile${item.route}`}>{item.text}</Link>
             </div>
           ))}
-          <div onClick={() => setShowModalExit(true)} className="flex cursor-pointer items-center gap-1 text-error">
+          <div
+            onClick={() => {
+              setShowModalExit(true);
+              localStorage.removeItem("rememberFood");
+            }}
+            className="flex cursor-pointer items-center gap-1 text-error"
+          >
             <RxExit className="rotate-180" />
-            <p onClick={logoutUser}>خروج</p>
+            <p>خروج</p>
           </div>
         </div>
       </div>
-      {
-        showModalExit && <ModalExit setShow={setShowModalExit} />
-      }
+      {showModalExit && <ModalExit setShow={setShowModalExit} />}
     </>
   );
 };

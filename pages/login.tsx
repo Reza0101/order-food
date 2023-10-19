@@ -8,6 +8,8 @@ import { AxiosError } from "axios";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { loginUser } from "@/Redux/store/user";
+import { useState } from "react";
+import { decodeJWT } from "@/hooks/decode_jwt";
 
 // Type for inputs form
 type IFormInput = {
@@ -17,13 +19,13 @@ type IFormInput = {
 };
 
 const login = () => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [rememberUser, setRememberUser] = useState(false);
 
   const deleteInputValue = () => {
-    email.deleteValue()
-    pwd.deleteValue()
-  }
+    email.deleteValue();
+    pwd.deleteValue();
+  };
   const { push } = useRouter();
   const {
     register,
@@ -43,14 +45,18 @@ const login = () => {
         pwd: pwd.value,
       });
 
-      const accessToken = JSON.parse(responseLogin.request.response).accessToken
-      
+      const accessToken = JSON.parse(
+        responseLogin.request.response
+      ).accessToken;
 
       if (responseLogin.status === 200) {
+        localStorage.setItem("rememberFood", JSON.stringify(rememberUser));
         useToast("لاگین با موفقیت انجام شد.", "success");
-        dispatch(loginUser({email: email.value, password: pwd.value, accessToken}))
-        deleteInputValue()
-
+        const {email, role } = decodeJWT(accessToken)
+        dispatch(
+          loginUser({ email, role, accessToken, authState: true })
+        );
+        deleteInputValue();
       }
 
       setTimeout(() => {
@@ -60,7 +66,7 @@ const login = () => {
       if (err instanceof AxiosError) {
         if (err.response?.status === 401) {
           useToast("لطفا ابتدا ثبت نام کنید.", "error");
-          deleteInputValue()
+          deleteInputValue();
         }
       }
     }
@@ -144,11 +150,19 @@ const login = () => {
             )}
           </div>
 
+          <div className="flex items-center gap-1 text-[14px]">
+            <input
+              onChange={() => setRememberUser((prev) => !prev)}
+              className="cursor-pointer"
+              type="checkbox"
+            />
+            <p>مرا به خاطر بسپار</p>
+          </div>
+
           <div className="w-full flex justify-center items-center">
             <button
               type="submit"
-              // disabled={!errors ? false : true}
-              className={`text-white mx-auto block bg-primary w-full py-1 rounded-4 sm:w-fit sm:px-5`}
+              className={`text-white mx-auto block bg-primary w-full py-1 rounded-4 sm:w-fit sm:px-10`}
             >
               ورود
             </button>

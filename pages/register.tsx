@@ -15,9 +15,8 @@ type IFormInput = {
   confirmPwd: string;
 };
 const register = () => {
-
   const { push } = useRouter();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -33,10 +32,10 @@ const register = () => {
 
   // delte input values
   const deleteInputValue = () => {
-    email.deleteValue()
-    password.deleteValue()
-    confirmPwd.deleteValue()
-  }
+    email.deleteValue();
+    password.deleteValue();
+    confirmPwd.deleteValue();
+  };
 
   // function register
   const submitHandler = async () => {
@@ -46,31 +45,19 @@ const register = () => {
         pwd: password.value,
       });
 
-
       if (responseRegister.status === 201) {
-        useToast("ثبت نام با موفقیت انجام شد.", "success");
-        console.log(responseRegister);
-        
-      const userEmail = JSON.parse(responseRegister.config.data).email
-      const userPwd = JSON.parse(responseRegister.config.data).pwd
-
-      
-
-        deleteInputValue()
-        dispatch(loginUser({email: userEmail, password: userPwd}))
+        useToast("ٍثبت نام با موفقیت انجام شد. لطفا وارد حساب خود شوید.", "success");
+        deleteInputValue();
       }
 
-
-      console.log(responseRegister);
-
       setTimeout(() => {
-        push("/");
+        push("/login");
       }, 1000);
     } catch (err) {
       if (err instanceof AxiosError) {
         if (err.response?.status === 409) {
           useToast(" کاربری از قبل وجود دارد.", "error");
-          deleteInputValue()
+          deleteInputValue();
         }
       }
     }
